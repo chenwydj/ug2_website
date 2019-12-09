@@ -1,2 +1,2 @@
 # UG2Website
-CVPR2018 Workshop Website
+CVPR2020 Workshop Website
