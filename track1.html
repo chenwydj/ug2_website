@@ -62,12 +62,12 @@
 
 
     <div class="main">
-      <section class="module bg-dark-30 portfolio-page-header" data-background="assets/images/t1bg.jpg" style="padding: 30px 0;">
+      <section class="module bg-dark-30 portfolio-page-header" data-background="assets/images/t2bg.jpg" style="padding: 30px 0;">
         <div class="container" style="width:100%">
           <div class="row" style="padding-top: 40px">
             <div class="col-sm-6 col-sm-offset-3">
-              <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 1: Video object classification and detection from unconstrained mobility platforms</h2> <!-- style="margin: 0 0 20px" -->
-              <!-- <h3 class="module-subtitle font-serif" style="margin: 0 0 20px"><a href="https://goo.gl/forms/ZLUqI25pAC7DTI3J3" class="section-scroll btn btn-border-w btn-round">Register for this track</a></h3> -->
+              <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 1: Object Detection in Poor Visibility Environments</h2>
+              <!-- <h3 class="module-subtitle font-serif" style="margin: 0 0 20px"><a href="https://goo.gl/forms/maxq1fsGGwowPVgc2" class="section-scroll btn btn-border-w btn-round">Register for this track</a></h3> -->
             </div>
           </div>
         </div>
@@ -77,186 +77,78 @@
         <div class="container">
           <div class="row" style="text-align: justify">
             <div class="col-sm-12 font-nat" style="font-size: 13pt">
-              <p>How does the current state of the art perform for detecting and recognizing objects in videos having different scales, illumination, noises, weather condition and occlusion? Can the application of image enhancement and restoration algorithms as a pre-processing step improve image interpretability for automatic visual recognition to classify scene content? The UG<sup>2</sup>+ Track 1 aims to advance the analysis of videos collected by small UAVs by applying image restoration and enhancement algorithms to improve recognition performance using the UG2 (UAV, Glider, Ground) dataset, which has been collected specifically for this purpose. </p>
-              <p>What should a software system that can interpret images from UAVs actually look like? It must incorporate a set of algorithms, drawn from the areas of computational photography and machine learning, into a processing pipeline that correct undesired visual degradation in UAV-based image collection and subsequently classifies images across time and space. Image restoration and enhancement algorithms that remove corruptions like blur, noise and mis-focus, or manipulate images to gain resolution, change perspective and compensate for lens distortion are now commonplace in photo editing tools. Such operations are necessary to improve the quality of images for recognition purposes. But they must be compatible with the recognition process itself, and not adversely affect feature extraction or decision making. Exploratory work is needed to find out which image pre-processing algorithms, in combination with the strongest features and supervised machine learning approaches, are promising candidates for UAV-related computer vision applications.</p>
-              <p>UG2+ Challenge 1 consists of two sub-challenges: 
+              <p>Many emerging applications, such as UAVs, autonomous/assisted driving, search and rescue robots, environment monitoring, security surveillance, transportation and inspection, hinge on computer vision-based sensing and understanding of outdoor environments. Such systems concern a wide range of target tasks such as detection, recognition, segmentation, tracking, and parsing. However, the performances of visual sensing and understanding algorithms will be largely jeopardized by various challenging conditions in unconstrained and dynamic degraded environments, e.g., moving platforms, bad weathers, and poor illumination. While most current vision systems are designed to perform in “clear” environments, i.e., where subjects are well observable without (significant) attenuation or alteration, a dependable vision system must reckon with the entire spectrum of complex unconstrained outdoor environments. Taking autonomous driving for example: the industry players have been tackling the challenges posed by inclement weathers; however, a heavy rain, haze or snow will still obscure the vision of on-board cameras and create confusing reflections and glare, leaving the state-of-the-art self-driving cars in struggle. Another illustrative example can be found in city surveillance: even the commercialized cameras adopted by governments appear fragile in challenging weather conditions. Therefore, it is highly desirable to study to what extent, and in what sense, such challenging visual conditions can be coped with, for the goal of achieving robust visual sensing and understanding in the wild, that benefit security/safety, autonomous driving, robotics, and an even broader range of signal and image processing applications</p>
+              <p>Despite the blooming research on removing or alleviating the impacts of those challenging, such as dehazing, rain removal and illumination enhancement, a unified view towards those problems has been absent, so have collective efforts for resolving their common bottlenecks. On one hand, such challenging visual conditions usually give rise to nonlinear and data-dependent degradations that will be much more complicated than the well-studied noise or motion blur, which follow some parameterized physical models a priori. That will naturally motivate a combination of model-based and data-driven approaches. On the other hand, it should be noted that most existing research works cast the handling of those challenging conditions as a post-processing step of signal restoration or enhancement after sensing, and then feed the restored data for visual understanding. The performance of high-level visual understanding tasks will thus largely depend on the quality of restoration or enhancement.It remains questionable whether restoration-based approaches would actually boost the visual understanding performance, as the restoration/enhancement step is not optimized towards the target task and may bring in misleading information and artifacts too. </p>
+              <p>UG<sup>2</sup>+ Challenge 1 aims to evaluate and advance object detection algorithms’ robustness in specific poor-visibility environmental situations including challenging weather and lighting conditions. It consists of the three sub-challenges below:
                 <ol>
-                  <li>
-                    Object Detection Improvement on Video
-                    <ul>
-                      <li>1st Place: $15K</li>
-                      <li>2nd Place: $10K</li>
-                    </ul>
-                  </li>
-                  <li>
-                    Object Classification Improvement on Video
-                    <ul>
-                      <li>1st Place: $15K</li>
-                      <li>2nd Place: $10K</li>
-                    </ul>
-                  </li>
+                  <li>(Semi-)Supervised Object Detection in Haze Conditions</li>
+                  <li>(Semi-)Supervised Face Detection in Low Light Conditions</li>
+                  <li>Zero-Shot Object Detection with Raindrop Occlusions</li>
                 </ol>
-                <b>Support for this challenge track is provided solely by the Office of the Director of National Intelligence (ODNI), Intelligence Advanced Research Projects Activity (IARPA).</b>
-              </p>
-              <hr>
-              <h3 class="module-title font-alt" style="margin: 0px; padding: 30px 0 20px">Sub-Challenge 1.1: Object Detection Improvement on Video</h3>
-              <p>The goal of this challenge is to detect objects from a number of visual object classes in unconstrained environments (i.e., not pre-segmented objects). It is fundamentally a supervised learning problem in that a training set of labeled images will be provided. Participants are not expected to develop novel object detection models. They are expected to use a pre-processing step (super-resolution, de-noising, deblurring, etc. and any combinations of these algorithms are within scope here) in the detection pipeline. A list of detection algorithms that will be used for scoring will be made available to the participants in order to facilitate studies of the interaction between image restoration and enhancement algorithms and the detectors. During the evaluation, the selected object detection algorithms will be run on the sequestered test images. In-line with popular detectors, the metrics will be *mAP@0.5 (mean average precision), mAP@0.75, mAP@0.9* for Glider, Ground and UAV collection.</p>
-              <ul>
-                <li>For the dataset and evaluation, please click <a href='https://drive.google.com/drive/folders/1DFqR64WvgGdI-P2UvPKiciDZVp_svaGC' style="color: #337ab7; text-decoration: underline">here</a>.</li>
-                <li>Details about how to use the dataset and evaluation is provided in this <a href='https://docs.google.com/document/d/1Lk1-mTIlyUTwp70OtatItDcPn6Q4NiRcokoylmqGIV8/edit' style="color: #337ab7; text-decoration: underline">Readme</a>.
-                </ul>
-
-              <div class="post" style="margin:0px">                    
-                    <div class="post-entry">
-                      <table class="table table-striped table-border checkout-table">
-                        <tbody>
-                          <tr>
-                            <th style='max-width: 30%;'>Collection</th>
-                            <th>mAP@50</th>
-                            <th>mAP@75</th>
-                            <th>mAP@90</th>
-                          </tr>
-                          <tr>                      
-                            <td>
-                              <h5 class="product-title font-alt">UAV Collection</h5>
-                            </td>                      
-                            <td>
-                              <h5 class="product-title font-alt">88.62%</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">39.54%</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">1.93%</h5>
-                            </td>
-                          </tr>  
-
-                          <tr>                      
-                            <td>
-                              <h5 class="product-title font-alt">Glider Collection</h5>
-                            </td>                      
-                            <td>
-                              <h5 class="product-title font-alt">91.06%</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">40.34%</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">2.95%</h5>
-                            </td>
-                          </tr>
-
-                          <tr>                      
-                            <td>
-                              <h5 class="product-title font-alt">Ground Collection</h5>
-                            </td>                      
-                            <td>
-                              <h5 class="product-title font-alt">100%</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">96.65%</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">54.73%</h5>
-                            </td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                    </div>
-                    <!-- <div class="post-more"><a class="more-link" >Read more</a>
-                    </div> -->
-                  </div>
-               Using the previous procedure, we obtain the following baseline classification results per each object class in all three collections:
               
-              <p style="padding-bottom: 40px; text-align:center">                 
-                <iframe style="width: 100%; max-width:851px; height:638px"  seamless frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQSs_xjIapehr79fZJQXecD1yyXojwbi1iN5-sT3MYA0aZKztx69uN7SG-7UwvA0uq8LmxGjUIivDa9/pubchart?oid=347919279&amp;format=interactive"></iframe>
-              </p>
-              <hr>
-              <h3 class="module-title font-alt" style="margin: 0px; padding: 30px 0 20px">Sub-Challenge 1.2: Object Classification Improvement on Video</h3>
-              <p >The goal of this challenge is to provide an improvement on the classification performance of a given object in a video captured from an unconstrained mobility platform. Participants will be tasked with the creation of a procesing pipeline to correct visual aberrations present in video in order to improve the classification results obtained with out-of-the-box classification algorithms. The evaluation protocol will allow participants to make use of within dataset training data, and as much outside training data as they would like for training / validation purposes. Participants will not be tasked with the creation of novel classification algorithms. During the evaluation, the selected classification algorithm will be run on the sequestered test images.</p>
-              
-              <p>The evaluation process will be as follows:
-                <ol>
-                  <li>For each object sequence (an object sequence is a group of frames during which a specific object of interest is visible, the object in the frame as well as its visibility is specified in the video’s annotation file (see the <a style="color: #337ab7; text-decoration: underline" href="dataset19_t1.html">Dataset page</a> for more information on the annotation file contents)), we use its annotations file to locate and crop the object from each frame, resizing the cropped region to 224x224 (input size for the VGG16 classification network).</li>
-                  <li>We feed the cropped objects to an out-of-the-box VGG16 network (using the imagenet weights provided by Keras).</li>
-                  <li>We calculate the <a style="color: #337ab7; text-decoration: underline" href="https://scikit-learn.org/stable/modules/model_evaluation.html#label-ranking-average-precision">Label Ranking Average Precision (LRAP)</a> of the classification output (array of vectors containing a confidence score for each of the 1000 imagenet classes). LRAP averages over all the frames in the sequence to answer the following question: for each ground truth label, what fraction of higher-ranked labels were true labels? This performance measure will be higher if you are able to give better rank to the labels associated with each sample. The obtained score is always strictly greater than 0, and the best values is 1.
-                    <ul><li>We define true labels as the set of imagenet classes that are contained within an UG<sup>2</sup> superclass. For example, the UG<sup>2</sup>  class “Bicycle”, has two true labels: “(<a href="http://www.image-net.org/synset?wnid=n03792782" style="color: #337ab7; text-decoration: underline">n03792782</a> - mountain bike), and (<a href="http://www.image-net.org/synset?wnid=n02835271" style="color: #337ab7; text-decoration: underline">n02835271</a> - bicycle-built-for-two)”.</li></ul>
-                  </li>
-                </ol>
+              <p style="text-align: justify; ">In all three sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; but they must state so in their submissions. Each leaderboard will be divided into two ranking lists: with and without external data. The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5. If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region, and 0 otherwise. When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially.</p>
 
-                Overall the UG<sup>2</sup> dataset contains 576 object sequences, divided among all three collections:
-                <div class="post" style="margin:0px">                    
-                    <div class="post-entry">
-                      <table class="table table-striped table-border checkout-table">
-                        <tbody>
-                          <tr>
-                            <th style="max-width: 75%;"></th>
-                            <th>UAV Collection</th>
-                            <th>Glider Collection</th>
-                            <th>Ground Collection</th>
-                          </tr>
-                          <tr>                      
-                            <td style="max-width: 75%;">
-                              <h5 class="product-title font-alt">Number of object sequences</h5>
-                            </td>                      
-                            <td>
-                              <h5 class="product-title font-alt">242</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">206</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">128</h5>
-                            </td>
-                          </tr>                          
-                          <tr>                      
-                            <td>
-                              <h5 class="product-title font-alt">Number of classes</h5>
-                            </td>                      
-                            <td>
-                              <h5 class="product-title font-alt">31</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">19</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">20</h5>
-                            </td>
-                          </tr>
-                          <tr>                      
-                            <td>
-                              <h5 class="product-title font-alt">Average LRAP</h5>
-                            </td>                      
-                            <td>
-                              <h5 class="product-title font-alt">12.20%</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">10.73%</h5>
-                            </td>
-                            <td>
-                              <h5 class="product-title font-alt">46.26%</h5>
-                            </td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                    </div>
-                    <!-- <div class="post-more"><a class="more-link" >Read more</a>
-                    </div> -->
-                  </div>
+              <p style="text-align: justify;padding-bottom: 40px">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:ug2challenge.2@gmail.com">ug2challenge.2@gmail.com</a></p>
 
-                Using the previous procedure, we obtain the following baseline classification results per each object class in all three collections:
-              </p>
-              <p style="padding-bottom: 40px; text-align:center">                 
-                <iframe style="width: 100%; max-width:851px; height:638px"  seamless frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRnWewKCQdL0aTIY1P9vNYQ9hY-oqHRZlE2YGfNkQT9ArNru9bLIoGhFg15UutLQVLV5f7ZzQBXQ-ay/pubchart?oid=1830172407&amp;format=interactive"></iframe>
-              </p>
+              <p style="padding-bottom: 40px"><b>The Office of the Director of National Intelligence (ODNI), Intelligence Advanced Research Projects Activity (IARPA) is not a sponsor for this track prizes and has not provided any funding in support of the challenge track. IARPA is not involved in the planning, execution, evaluation, or awarding of prizes for the Track 1 challenge.</b>
+              </p></p>
             </div>
           </div>
 
         </div>
       </section>
-    <a id="ddfooterLink" href="footer_IARPA.html">Footer</a>
+      <hr class="divider-w">
+      <section>
+        <div class="container" style="width:100%; margin: 0px; padding: 40px 0px 40px 0px">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <h2 class="module-title font-alt">Sponsors</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="owl-carousel text-center" data-items="4" data-pagination="false" data-navigation="false">
+              <div class="owl-item">
+                <div class="col-sm-10">
+                  <div class="ex-product"><img src="assets/images/sponsors/nec.jpg" alt="NEC Laboratories"/>
+                    <h4 class="shop-item-title font-alt"></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item">
+                <div class="col-sm-10">
+                  <div class="ex-product"><img src="assets/images/sponsors/walmart.png" alt="Walmart"/>
+                    <h4 class="shop-item-title font-alt"></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item">
+                <div class="col-sm-10">
+                  <div class="ex-product"><img src="assets/images/sponsors/kuaishou.jpg" alt="kuaishou"/>
+                    <h4 class="shop-item-title font-alt"></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item">
+                <div class="col-sm-10">
+                  <div class="ex-product"><img src="assets/images/sponsors/meitu.png" alt="meitu"/>
+                    <h4 class="shop-item-title font-alt"></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item">
+                <div class="col-sm-10">
+                  <div class="ex-product"><img src="assets/images/sponsors/WechatIMG234.png" alt="leinao"/>
+                    <h4 class="shop-item-title font-alt"></h4>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <a id="ddfooterLink" href="footer.html">Footer</a>
       <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
   </main>
     <!--  
