@@ -66,7 +66,7 @@
         <div class="container" style="width:100%">
           <div class="row" style="padding-top: 40px">
             <div class="col-sm-6 col-sm-offset-3">
-              <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 2: Object Detection in Poor Visibility Environments</h2>
+              <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 2: FlatCam for Faces: Enhancement, Reconstruction, and Verification</h2>
               <!-- <h3 class="module-subtitle font-serif" style="margin: 0 0 20px"><a href="https://goo.gl/forms/maxq1fsGGwowPVgc2" class="section-scroll btn btn-border-w btn-round">Register for this track</a></h3> -->
             </div>
           </div>
@@ -74,24 +74,45 @@
       </section>
 
       <section class="module-medium" style="padding-bottom: 0px">
+        
+        <!-- FlatCam Figure -->
+        <div class="container" style="padding-bottom: 20px">
+            <figure>
+              <img src="flatcam_fig.png" style="width:75%;height:75%;margin-left:auto;margin-right:auto;display:block;border: none;">
+              <figcaption style="width:80%;margin-left:auto;margin-right:auto;display:block">
+                <em>The FlatCam is a thin lensless camera whose measurements are passed into a reconstruction algorithm to produce an image. Figure from [1].</em></figcaption>
+            </figure>
+        </div>
+
+        <!-- Text -->
         <div class="container">
           <div class="row" style="text-align: justify">
             <div class="col-sm-12 font-nat" style="font-size: 13pt">
-              <p>Many emerging applications, such as UAVs, autonomous/assisted driving, search and rescue robots, environment monitoring, security surveillance, transportation and inspection, hinge on computer vision-based sensing and understanding of outdoor environments. Such systems concern a wide range of target tasks such as detection, recognition, segmentation, tracking, and parsing. However, the performances of visual sensing and understanding algorithms will be largely jeopardized by various challenging conditions in unconstrained and dynamic degraded environments, e.g., moving platforms, bad weathers, and poor illumination. While most current vision systems are designed to perform in “clear” environments, i.e., where subjects are well observable without (significant) attenuation or alteration, a dependable vision system must reckon with the entire spectrum of complex unconstrained outdoor environments. Taking autonomous driving for example: the industry players have been tackling the challenges posed by inclement weathers; however, a heavy rain, haze or snow will still obscure the vision of on-board cameras and create confusing reflections and glare, leaving the state-of-the-art self-driving cars in struggle. Another illustrative example can be found in city surveillance: even the commercialized cameras adopted by governments appear fragile in challenging weather conditions. Therefore, it is highly desirable to study to what extent, and in what sense, such challenging visual conditions can be coped with, for the goal of achieving robust visual sensing and understanding in the wild, that benefit security/safety, autonomous driving, robotics, and an even broader range of signal and image processing applications</p>
-              <p>Despite the blooming research on removing or alleviating the impacts of those challenging, such as dehazing, rain removal and illumination enhancement, a unified view towards those problems has been absent, so have collective efforts for resolving their common bottlenecks. On one hand, such challenging visual conditions usually give rise to nonlinear and data-dependent degradations that will be much more complicated than the well-studied noise or motion blur, which follow some parameterized physical models a priori. That will naturally motivate a combination of model-based and data-driven approaches. On the other hand, it should be noted that most existing research works cast the handling of those challenging conditions as a post-processing step of signal restoration or enhancement after sensing, and then feed the restored data for visual understanding. The performance of high-level visual understanding tasks will thus largely depend on the quality of restoration or enhancement.It remains questionable whether restoration-based approaches would actually boost the visual understanding performance, as the restoration/enhancement step is not optimized towards the target task and may bring in misleading information and artifacts too. </p>
-              <p>UG<sup>2</sup>+ Challenge 2 aims to evaluate and advance object detection algorithms’ robustness in specific poor-visibility environmental situations including challenging weather and lighting conditions. It consists of the three sub-challenges below:
+              <p>Advances in computer vision and machine learning continuously give rise to an increasing number of applications. However, some of these applications, such as the Internet of Things, lightweight drones, etc., have strict size and cost constraints that standard lens-based cameras (with costs of &asymp; $20 and thicknesses of &asymp; 7mm) cannot satisfy. The FlatCam is a new lensless camera design from computational photography that aims to address these concerns by having a thickness of &asymp; 1mm and a predicted production cost of &lt; $1 at scale. Such a design can be more easily incorporated into highly constrained settings, allowing image inference tasks to be performed in stringent applications. </p>
+              <p>The FlatCam replaces the optical lenses of a standard lens-based camera with a thin amplitude mask containing multiple apertures and an accompanying image reconstruction algorithm [2]. 
+                Due to the absence of optical focusing elements and because of non-idealities in the reconstruction, FlatCam images come with a unique set of artifacts that have yet to be closely studied. 
+                What has been shown, however, is that applying a standard off-the-shelf face verification algorithm on FlatCam images without any modification to the algorithm yields very low accuracies even if the same algorithm performs very well on webcam images of the same scenes [1]. 
+                Thus, there is still a missing step before one can use the wealth of computer vision algorithms as is on FlatCam images. 
+                This step may be filled in by a proper image enhancement algorithm or by a vision-specific reconstruction algorithm, both of which are desired outcomes of this challenge. </p>
+              <p>In addition, for applications solely interested in performing a recognition task, image reconstruction may not even be necessary. 
+                It may be possible to obtain even better recognition performance by designing an algorithm that takes as inputs the unreconstructed FlatCam measurements and outputs the desired predictions without including an intermediate image reconstruction step. 
+                Direct recognition on coded computational photography measurements is relatively unstudied, and a third desired outcome of this challenge is an algorithm that can successfully do so on FlatCam images. </p>
+              <p>UG<sup>2</sup>+ Challenge 2 aims to improve the accuracy of face verification on FlatCam images via three different approaches represented by the following three sub-challenges:</p>
                 <ol>
-                  <li>(Semi-)Supervised Object Detection in Haze Conditions</li>
-                  <li>(Semi-)Supervised Face Detection in Low Light Conditions</li>
-                  <li>Zero-Shot Object Detection with Raindrop Occlusions</li>
+                  <li>Image Enhancement for FlatCam Face Verification</li>
+                  <li>Image Reconstruction for FlatCam Face Verification</li>
+                  <li>End-to-End Face Verification on FlatCam Measurements</li>
                 </ol>
               
-              <p style="text-align: justify; ">In all three sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; but they must state so in their submissions. Each leaderboard will be divided into two ranking lists: with and without external data. The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5. If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region, and 0 otherwise. When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially.</p>
+              <p style="text-align: justify; ">In all three sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; but they must state so in their submissions. Each leaderboard will be divided into two ranking lists: with and without external data. </p>
 
-              <p style="text-align: justify;padding-bottom: 40px">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:ug2challenge.2@gmail.com">ug2challenge.2@gmail.com</a></p>
+              <p style="text-align: justify">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:ug2challenge.2@gmail.com">ug2challenge.2@gmail.com</a></p>
+              
+              <p style="padding-bottom: 40px"> References:<br>
+                  [1] J. Tan, L. Niu, J. Adams, V. Boominathan, J. T. Robinson, R. G. Baraniuk, and A. Veeraraghavan, "Face Detection and Verification Using Lensless Cameras," in IEEE Trans. Comput. Imag., vol. 5, no. 2, pp. 180-194, June 2019.<br>
+                  [2] S. M. Asif, A. Ayremlou, A. Sankaranarayanan, A. Veeraraghavan, and R. G. Baraniuk, "FlatCam: Thin, Lensless Cameras Using Coded Aperture and Computation," in IEEE Trans. Comput. Imag., vol. 3, no. 3, pp.384-397, July 2016.
+              </p>
 
-              <p style="padding-bottom: 40px"><b>The Office of the Director of National Intelligence (ODNI), Intelligence Advanced Research Projects Activity (IARPA) is not a sponsor for this track prizes and has not provided any funding in support of the challenge track. IARPA is not involved in the planning, execution, evaluation, or awarding of prizes for the Track 2 challenge.</b>
-              </p></p>
             </div>
           </div>
 
