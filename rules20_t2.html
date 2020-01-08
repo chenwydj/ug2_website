@@ -184,13 +184,13 @@
                 <li>Create a standalone Docker image that contains your models and code for running your algorithm following these requirements:
                   <ul>
                     <li><b>Sub-challenge 2.1:</b> Your Docker image must contain the file "/root/ug2_challenge2-1_submission#.sh" (# = 1, 2, or 3 and refers to the number of submission).
-                      When run, this script must enhance all the images (png format) in the directory "/root/challenge2-1_test_input" and save the outputs in "/root/challenge2-1_test_output_submission#", keeping all the image names the same.
+                      When run, this script must enhance all the images (png format) in the directory "/root/challenge2-1_test_input" and save the outputs in "/root/challenge2-1_test_output/submission#", keeping all the image names the same.
                       In test time, we will mount the folder "/root/challenge2-1_test_input" containing the reconstructed FlatCam images of the hold-out test set from which your algorithm will be evaluated.
                       We will also mount a file "/root/test_filenames.txt" that will contain the filename of each image in "/root/challenge2-1_test_input" that you may use.
                       See the Devkit for examples.
                     </li>
                     <li><b>Sub-challenge 2.2:</b> Your Docker image must contain the file "/root/ug2_challenge2-2_submission#.sh" (# = 1, 2, or 3 and refers to the number of submission).
-                        When run, this script must reconstruct all the FlatCam measurements (png format) in the directory "/root/challenge2-2_test_input" and save the outputs in "/root/challenge2-2_test_output_submission#", keeping all the image names the same.
+                        When run, this script must reconstruct all the FlatCam measurements (png format) in the directory "/root/challenge2-2_test_input" and save the outputs in "/root/challenge2-2_test_output/submission#", keeping all the image names the same.
                         In test time, we will mount the folder "/root/challenge2-2_test_input" containing the FlatCam measurements of the hold-out test set from which your algorithm will be evaluated.
                         We will also mount a file "/root/test_filenames.txt" that will contain the filename of each image in "/root/challenge2-2_test_input" that you may use.
                         A sample Docker image is provided with the DevKit as a guide.
@@ -198,14 +198,10 @@
                     <li><b>Sub-challenge 2.3:</b> Your Docker image must contain the file "/root/ug2_challenge2-3_submission#.sh" (# = 1, 2, or 3 and refers to the number of submission).
                         In test time, we will mount the following files:
                         <ul>
-                          <li>/root/challenge2-3_test_pairs.txt: a text file where each line contains a space-separated pair of filenames.</li>
-                          <li>/root/challenge2-3_val_pairs.txt: a text file where each line contains a space-separated pair of filenames.</li>
-                          <li>/root/challenge2-3_val_gt.txt: a text file where each line contains either 1 or 0 depending on whether the corresponding pair of images listed in /root/challenge2_subchallenge3_val_pairs.txt contains the same identity or not, respectively.</li>
+                          <li>/root/challenge2-3_test_pairs.txt: a text file where each line contains a space-separated pair of filenames of FlatCam measurements (absolute path).</li>
                           <li>/root/challenge2-3_test_input: a directory containing the images referred to in /root/challenge2-3_test_pairs.txt and /root/challenge2-3_val_pairs.txt</li>
                         </ul>
                         Your submission script, when run, must output a text file "/root/ug2_challenge2-3_test_output_submission#.txt" with the same number of lines as "/root/challenge2-3_test_pairs.txt" wherein each line is either 1 or 0 pertaining to whether your algorithm predicts that the pair of images in the text file contains the same identity or not, respectively.
-                        You may use the provided validation pairs and validation ground truth text files to choose parameters such as confidence threshold.
-                        Your code will be run across ten folds (different shuffling of images used for validation and test), and your score will be your average prediction accuracy across the 10 folds.
                     </li>
                   </ul>
                 </li>
@@ -214,7 +210,7 @@
               </ol>
               <h3 class="work-details-title font-alt">Development Kit</h3>
               <p style="text-align: justify;">
-                The Development Kit (coming soon) contains three components:
+                The Development Kit (<a href="https://github.com/tanjasper/ug2_2020_challenge2_devkit">LINK</a>) contains three components:
                 <ul>
                   <li>Python and Matlab codes for standard FlatCam reconstruction as detailed <a href="https://arxiv.org/pdf/1509.00116.pdf">here</a></li>
                   <li>Sample evaluation script with sample test images. 
