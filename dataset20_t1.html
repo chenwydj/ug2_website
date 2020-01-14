@@ -85,7 +85,7 @@
                 <h5 class="work-details-title font-alt">Training & Evaluation</h5>
                 <p>In all three sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; but they must state so in their submissions. The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5. If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region, and 0 otherwise. When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially.</p>
 
-                <h4 class="work-details-title font-alt" id='subchallenge1'>Sub-Challenge 1.1: (Semi-)Supervised Object Detection in the Haze</h4>
+                <h4 class="work-details-title font-alt" id='subchallenge1'>Sub-Challenge 1.1: Object Detection in the Haze</h4>
                 <p>We provide a set of 4,322 real-world hazy images collected from traffic surveillance, all labeled with object bounding boxes and categories (car, bus, bicycle, motorcycle, pedestrian), as the main training and/or validation sets. We also release another set of 4,807 unannotated real-world hazy images collected from the same sources (and containing the same classes of traffic objects, though not annotated), which might be used at the participants’ discretization. There will be a hold-out testing set of 3,000 real-world hazy images, with the same classes of objected annotated.</p>
                 <ul style="padding-left: 20px">
                   <li><strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/1712.04143" target="_blank">ArXiv</a></span>
@@ -96,14 +96,16 @@
                   </li>
                 </ul>
 
-                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Sub-Challenge 1.2: (Semi-)Supervised Face Detection in the Low Light Condition</h4>
-                <p>We provide 6,000 real-world low light images captured during the nighttime, at teaching buildings, streets, bridges, overpasses, parks etc., all labeled with bounding boxes for of human face, as the main training and/or validation sets. We also provide 9,000 unlabeled low-light images collected from the same setting. Additionally, we provided a unique set of 789 paired low-light / normal-light images captured in controllable real lighting conditions (but unnecessarily containing faces), which can be used as parts of the training data at the participants’ discretization. There will be a hold-out testing set of 4,000 low-light images, with human face bounding boxes annotated.</p>
+                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Sub-Challenge 1.2: Face Detection in the Extremely Low Light Condition</h4>
+                <p>We provide 6,000 real-world low light images captured during the nighttime, at teaching buildings, streets, bridges, overpasses, parks etc., 
+                  all labeled with bounding boxes for of human face, as the main training and/or validation sets. 
+                 There will be a hold-out testing set of 4,000 low-light images, with human face bounding boxes annotated.</p>
                 <ul style="padding-left: 20px">
-                  <li><strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/1808.04560" target="_blank">ArXiv</a></span>
+                  <li><strong>Paper: </strong><span class="font-serif"><a href="" target="_blank">ArXiv</a></span>
                   </li>
                   <li><strong>Release Date: </strong><span class="font-serif">August, 2018</span>
                   </li>
-                  <li><strong>Download: </strong><span class="font-serif"><a href="https://flyywh.github.io/CVPRW2019LowLight/" target="_blank">Dark Face</a></span>
+                  <li><strong>Download: </strong><span class="font-serif">Extremely Dark Face<a href="https://drive.google.com/file/d/1hC4Htkra57S-JO16P5LEiHpXlpYG-Ltj/view?usp=sharing" target="_blank">&nbsp Data</a><a href="https://drive.google.com/file/d/1bfAb9l6q2-4TlgO7JeJyHY22dKSrRBw5/view?usp=sharing" target="_blank">&nbsp Label</a></span>
                   </li>
                 </ul>
 
