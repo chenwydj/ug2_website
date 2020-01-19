@@ -80,7 +80,9 @@
                 <h4 class="work-details-title font-alt">About the Dataset</h4>
                 <p>We provide two types of data for Challenge 2.
                   For each type of data, we provide both FlatCam sensor measurements, as well as FlatCam Tikhonov reconstructions.
-                  You need not use all data for an individual subchallenge, and some data may be more appropriate for some subchallenges than others.</p>
+                  You need not use all data for an individual subchallenge, and some data may be more appropriate for some subchallenges than others.
+                  We do not explicitly split the data into training and validation sets and leave that to the participant.
+                </p>
                 <p>The first type of data is the <b>FlatCam Face Dataset (FCFD)</b>, a dataset of 87 subjects captured with a FlatCam prototype in a variety of conditions.
                   The test dataset for all subchallenges is composed of images captured in the same manner as the FCFD (but with different subjects).
                   Thus, the FCFD is the closest resemblance to the challenge's test images.</p>
@@ -94,13 +96,14 @@
                 <p>The FCFD can be obtained via this <a href="http://computationalimaging.rice.edu/databases/flatcam-face-dataset/">LINK</a>.</p>
 
                 <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Display-captured CASIA Dataset</h4>
-                <p>A subset of the CASIA-WebFace dataset [1] containing ~380,000 images of different face identities (organized into different subfolders).</p>
+                <p>A subset of the CASIA-WebFace dataset [1] containing ~380,000 images of different face identities (organized into different subfolders). Note that not all the original CASIA images were display-captured by the FlatCam.</p>
                 <ul style="padding-left: 20px">
+                  <li><strong>Original Images: </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1kB0CSzRx16InEdRQlWfz8WbSSINxdA7O/view?usp=sharing">LINK</a></span></li>
                   <li><strong>FlatCam Measurements (792 GB): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1ayYKFXili1Bw34E_kR5gF3AKahG4TaSW/view?usp=sharing">LINK</a></span>
                   </li>
                   <li><strong>Tikhonov Reconstructions (30 GB): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1Oh1yuVZzzgwZWOShe_2aWgcCmI9WFwGL/view?usp=sharing">LINK</a></span>
                   </li>
-                  <li><strong>Filenames: </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1e-HfoPd1K7qSd3Zb_rfte6v-yrl8HY9T/view?usp=sharing">LINK</a></span>
+                  <li><strong>Filenames (only those that were display-captured): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1e-HfoPd1K7qSd3Zb_rfte6v-yrl8HY9T/view?usp=sharing">LINK</a></span>
                   </li>
                 </ul>
                 <p>Reference [1]: D. Yi, Z. Lei, S. Liao, and S. Z. Li, "Learning face representation from scratch," arXiv preprint arXiv:1411.7923, 2014.</p>
@@ -108,11 +111,13 @@
                 <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Display-captured WIDER Dataset</h4>
                 <p>A subset of the WIDER Face dataset [2] containing various crops of the dataset's images captured by the FlatCam. Bounding box information is also provided.</p>
                 <ul style="padding-left: 20px">
-                  <li><strong>FlatCam Measurements: </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1Xlmyc9WfGQpPlljxztK8AJXP-KODqMGS/view?usp=sharing">LINK</a></span>
+                  <li><strong>Original Images: </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1MzloViQyHIOeaDzMgkN97swUJkDbjGTd/view?usp=sharing">LINK</a></span></li>
+                  <li><strong>FlatCam Measurements (28 GB): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1Xlmyc9WfGQpPlljxztK8AJXP-KODqMGS/view?usp=sharing">LINK</a></span>
                   </li>
                   <li><strong>Tikhonov Reconstructions (1 GB): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1TZRAPxkbTocpo2aMPaHY3jhrGeb2niub/view?usp=sharing">LINK</a></span>
                   </li>
-                  <li><strong>Bounding Boxes (xywh format): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1hff_Kv3_gPjcD9dfSCWKV5e352ndgMeO/view?usp=sharing">LINK</a></span>
+                  <li><strong>Original Images Bounding Boxes (xywh format): </strong><span class="font-serif"><a href="https://drive.google.com/open?id=1WTG9kE_eh19FEgI82JdOL1i43ML5PSZr">LINK</a></span></li>
+                  <li><strong>Tikhonov Reconstruction Bounding Boxes (xywh format): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1hff_Kv3_gPjcD9dfSCWKV5e352ndgMeO/view?usp=sharing">LINK</a></span>
                   </li>
                   <li><strong>Filenames: </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1fudE9sJBhFcVOtQT4_Wjx02brFKh4r8I/view?usp=sharing">LINK</a></span></li>
                 </ul>

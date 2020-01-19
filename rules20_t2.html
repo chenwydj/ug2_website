@@ -154,19 +154,24 @@
               <ol style="text-align: justify;">
                 <li><b>Sub-Challenge 2.1: Image Enhancement for FlatCam Face Verification.</b> 
                   You will be given Tikhonov reconstructed FlatCam images, and you must design an algorithm that enhances these images to improve the performance of face verification algorithms performed on them. 
-                  To gauge the effectiveness of your algorithm, off-the-shelf face verification algorithms will be applied to Tikhonov reconstructed FlatCam images from a hold-out test set pre-processed by your enhancement algorithm. 
+                  To gauge the effectiveness of your algorithm, 3-4 off-the-shelf face verification algorithms will be applied to Tikhonov reconstructed FlatCam images from a hold-out test set pre-processed by your enhancement algorithm. 
+                  Your score will be the average accuracy rate of the face verification algorithms.
+                  We may provide 1-2 of the face verification algorithms in the DevKit (to be confirmed by Jan. 31).
                   Note that you will not design a face verification algorithm or a reconstruction algorithm.
                 </li>
                 <li><b>Sub-Challenge 2.2: Image Reconstruction for FlatCam Face Verification.</b> 
                   You will design a new reconstruction algorithm that maps raw FlatCam sensor measurements into face images that are then input to a face verification algorithm. 
                   You will be given calibration information for the FlatCam prototype used, as well as code for the standard reconstruction algorithm, which you may or may not use. 
                   You will not design a novel face verification algorithm. 
-                  For testing, your algorithm would be applied to the sensor measurements of a hold-out test set whose outputs are then passed into off-the-shelf face verification algorithms. 
+                  For testing, your algorithm would be applied to the sensor measurements of a hold-out test set whose outputs are then passed into 3-4 off-the-shelf face verification algorithms.
+                  Your score will be the average accuracy rate of the face verification algorithms.
+                  We may provide 1-2 of the face verification algorithms in the DevKit (to be confirmed by Jan. 31). 
                 </li>
                 <li><b>Sub-Challenge 2.3: End-to-End Face Verification on FlatCam Measurements.</b>
                   You will design an end-to-end procedure for performing face verification directly on FlatCam sensor measurements. 
                   Your should take in a pair of sensor measurements and output whether the two images contain the same identity or not. 
                   No image reconstruction nor enhancement component is necessary in the final pipeline, although they are also not forbidden.
+                  Your score will be the accuracy rate of your predictions (number of correct predictions divided by total image pairs).
                 </li>
             </div>
           </div>
