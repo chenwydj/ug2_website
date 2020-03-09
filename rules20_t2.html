@@ -165,7 +165,6 @@
                   You will not design a novel face verification algorithm. 
                   For testing, your algorithm would be applied to the sensor measurements of a hold-out test set whose outputs are then passed into 3-4 off-the-shelf face verification algorithms.
                   Your score will be the average accuracy rate of the face verification algorithms.
-                  We may provide 1-2 of the face verification algorithms in the DevKit (to be confirmed by Jan. 31). 
                 </li>
                 <li><b>Sub-Challenge 2.3: End-to-End Face Verification on FlatCam Measurements.</b>
                   You will design an end-to-end procedure for performing face verification directly on FlatCam sensor measurements. 
@@ -205,7 +204,7 @@
                         In test time, we will mount the following files:
                         <ul>
                           <li>/root/challenge2-3_test_pairs.txt: a text file where each line contains a space-separated pair of filenames of FlatCam measurements (absolute path).</li>
-                          <li>/root/challenge2-3_test_input: a directory containing the images referred to in /root/challenge2-3_test_pairs.txt and /root/challenge2-3_val_pairs.txt</li>
+                          <li>/root/challenge2-3_test_input: a directory containing the images referred to in /root/challenge2-3_test_pairs.txt</li>
                         </ul>
                         Your submission script, when run, must output a text file "/root/ug2_challenge2-3_test_output_submission#.txt" with the same number of lines as "/root/challenge2-3_test_pairs.txt" wherein each line is either 1 or 0 pertaining to whether your algorithm predicts that the pair of images in the text file contains the same identity or not, respectively.
                     </li>
