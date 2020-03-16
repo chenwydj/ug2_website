@@ -78,12 +78,10 @@
             <div class="col-sm-12 font-nat" style="font-size: 13pt">            
               <h3 class="module-title font-alt" style="margin: 0px; padding: 30px 0 20px">Timetable</h3>
               <ul>
-                <li>January 15, 2020: Development kit and registration made available</li>
-                <li>March 15 - April 15, 2020: Dry run period**</li>
-                <li>April 15, 2020: Registration deadline</li>
-                <li>May 1, 2020: Submissions deadline</li>
-                <li>May 20, 2020: Challenge results will be released</li>
-                <li>June 16, 2020: Most successful and innovative teams present at <a href="http://cvpr2020.thecvf.com/">CVPR 2020 workshop</a></li>
+                <li>January 31, 2020: Development kit and registration made available</li>
+                <li>March 15, 2020: Registration deadline</li>
+                <li>April 1-8, 2020: Dry run period**</li>
+                <li>April 8, 2020: Submissions deadline</li>
               </ul>
               ** Every contestant will have the opportunity to verify before the submission window closes that their Docker container submission works. This dry run is completely optional but is highly recommended.
 
@@ -105,22 +103,25 @@
                     <li>
                       Image Enhancement for FlatCam Face Verification
                       <ul>
-                        <li>1st Place: $???K</li>
-                        <li>2nd Place: $???K</li>
+                        <li>1st Place: $500</li>
+                        <li>2nd Place: $300</li>
+                        <li>3rd Place: $200</li>
                       </ul>
                     </li>
                     <li>
                       Image Reconstruction for FlatCam Face Verification
                       <ul>
-                        <li>1st Place: $???K</li>
-                        <li>2nd Place: $???K</li>
+                        <li>1st Place: $500</li>
+                        <li>2nd Place: $300</li>
+                        <li>3rd Place: $200</li>
                       </ul>
                     </li>
                     <li>
                       End-to-End Verification on FlatCam Measurements
                       <ul>
-                        <li>1st Place: $???K</li>
-                        <li>2nd Place: $???K</li>
+                        <li>1st Place: $500</li>
+                        <li>2nd Place: $300</li>
+                        <li>3rd Place: $200</li>
                       </ul>
                     </li>
                   </ol>
@@ -154,9 +155,8 @@
               <ol style="text-align: justify;">
                 <li><b>Sub-Challenge 2.1: Image Enhancement for FlatCam Face Verification.</b> 
                   You will be given Tikhonov reconstructed FlatCam images, and you must design an algorithm that enhances these images to improve the performance of face verification algorithms performed on them. 
-                  To gauge the effectiveness of your algorithm, 3-4 off-the-shelf face verification algorithms will be applied to Tikhonov reconstructed FlatCam images from a hold-out test set pre-processed by your enhancement algorithm. 
+                  To gauge the effectiveness of your algorithm, 3 off-the-shelf face verification algorithms will be applied to Tikhonov reconstructed FlatCam images from a hold-out test set pre-processed by your enhancement algorithm. 
                   Your score will be the average accuracy rate of the face verification algorithms.
-                  We may provide 1-2 of the face verification algorithms in the DevKit (to be confirmed by Jan. 31).
                   Note that you will not design a face verification algorithm or a reconstruction algorithm.
                 </li>
                 <li><b>Sub-Challenge 2.2: Image Reconstruction for FlatCam Face Verification.</b> 
@@ -165,7 +165,6 @@
                   You will not design a novel face verification algorithm. 
                   For testing, your algorithm would be applied to the sensor measurements of a hold-out test set whose outputs are then passed into 3-4 off-the-shelf face verification algorithms.
                   Your score will be the average accuracy rate of the face verification algorithms.
-                  We may provide 1-2 of the face verification algorithms in the DevKit (to be confirmed by Jan. 31). 
                 </li>
                 <li><b>Sub-Challenge 2.3: End-to-End Face Verification on FlatCam Measurements.</b>
                   You will design an end-to-end procedure for performing face verification directly on FlatCam sensor measurements. 
@@ -205,7 +204,7 @@
                         In test time, we will mount the following files:
                         <ul>
                           <li>/root/challenge2-3_test_pairs.txt: a text file where each line contains a space-separated pair of filenames of FlatCam measurements (absolute path).</li>
-                          <li>/root/challenge2-3_test_input: a directory containing the images referred to in /root/challenge2-3_test_pairs.txt and /root/challenge2-3_val_pairs.txt</li>
+                          <li>/root/challenge2-3_test_input: a directory containing the images referred to in /root/challenge2-3_test_pairs.txt</li>
                         </ul>
                         Your submission script, when run, must output a text file "/root/ug2_challenge2-3_test_output_submission#.txt" with the same number of lines as "/root/challenge2-3_test_pairs.txt" wherein each line is either 1 or 0 pertaining to whether your algorithm predicts that the pair of images in the text file contains the same identity or not, respectively.
                     </li>
