@@ -66,7 +66,10 @@
           <div class="row"  style="padding: 40px 40px 0px 40px">
             <div class="col-sm-6 col-sm-offset-3">
               <h2 class="module-title font-alt" style="margin: 0 0 20px">Poor Visibility Datasets</h2>
-              <h3 class="module-subtitle font-serif" style="margin: 0 0 20px"><a href="#subchallenge1" class="section-scroll btn btn-border-w btn-round">Sub-Challenge 1</a>  <a href="#subchallenge2" class="section-scroll btn btn-border-w btn-round">Sub-Challenge 2</a> <a href="#subchallenge3" class="section-scroll btn btn-border-w btn-round">Sub-Challenge 3</a></h3>
+              <h3 class="module-subtitle font-serif" style="margin: 0 0 20px">
+                <a href="#subchallenge1" class="section-scroll btn btn-border-w btn-round">Sub-Challenge 1</a>
+                <a href="#subchallenge2" class="section-scroll btn btn-border-w btn-round">Sub-Challenge 2</a>
+              </h3>
 
             </div>
           </div>
@@ -80,19 +83,40 @@
             <div class="col-sm-12 col-md-12 col-lg-12">
               <div class="work-details">
                 <h4 class="work-details-title font-alt">About the Dataset</h4>
-                <p>We structure this track into three sub-challenges. Each challenge features a different poor-visibility outdoor condition, and diverse training protocols (paired versus unpaired images, annotated versus unannotated, etc.).</p>
+                <p>
+                  We structure this track into two sub-challenges. Each challenge features a different poor-visibility outdoor condition,
+                  and diverse training protocols (paired versus unpaired images, annotated versus unannotated, etc.).
+                </p>
                 <p><ul><li>Dataset and baseline report: <a href='https://arxiv.org/abs/1904.04474' style="color: #337ab7; text-decoration: underline">Arxiv</a></li></ul></p>
                 <h5 class="work-details-title font-alt">Training & Evaluation</h5>
-                <p>In all three sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; but they must state so in their submissions. The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5. If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region, and 0 otherwise. When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially.</p>
+                <p>
+                  In all two sub-challenges, the participant teams are allowed to use external training data that are not mentioned above,
+                  including self-synthesized or self-collected data; <b>but they must state so in their submissions ("Method description" section in Codalab)</b>.
+                  The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5.
+                  If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region,
+                  and 0 otherwise. When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially.
+                </p>
 
-                <h4 class="work-details-title font-alt" id='subchallenge1'>Sub-Challenge 1.1: Object Detection in the Hazy & Rainy Condition</h4>
-                <p>We provide a set of 4,322 real-world hazy images collected from traffic surveillance, all labeled with object bounding boxes and categories (car, bus, bicycle, motorcycle, pedestrian), as the main training and/or validation sets. We also release another set of 4,807 unannotated real-world hazy images collected from the same sources (and containing the same classes of traffic objects, though not annotated), which might be used at the participants’ discretization. There will be a hold-out testing set of 3,000 real-world hazy images, with the same classes of objected annotated.</p>
+                <h4 class="work-details-title font-alt" id='subchallenge1'>Sub-Challenge 1.1: Object Detection in the Hazy Condition</h4>
+                <p>
+                  We provide a set of 4,322 real-world hazy images collected from traffic surveillance, all labeled with object bounding boxes and categories
+                  (car, bus, bicycle, motorcycle, pedestrian), as the main training and/or validation sets.
+                  We also release another set of 4,807 unannotated real-world hazy images collected from the same sources (and containing the same classes of traffic objects,
+                  though not annotated), which might be used at the participants’ discretization. There will be a hold-out testing set of 3,000 real-world hazy images,
+                  with the same classes of objected annotated.
+                </p>
                 <ul style="padding-left: 20px">
-                  <li><strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/1712.04143" target="_blank">ArXiv</a></span>
+                  <li>
+                    <strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/1712.04143" target="_blank">ArXiv</a></span>
                   </li>
-                  <li><strong>Release Date: </strong><span class="font-serif">December, 2017</span>
+                  <li>
+                    <strong>Release Date: </strong><span class="font-serif">December, 2017</span>
                   </li>
-                  <li><strong>Download: </strong><span class="font-serif"><a href="https://sites.google.com/site/boyilics/website-builder/reside" target="_blank">Benchmarking Single Image Dehazing and Beyond</a></span>
+                  <li>
+                    <strong>Download: </strong><span class="font-serif"><a href="https://sites.google.com/site/boyilics/website-builder/reside" target="_blank">Benchmarking Single Image Dehazing and Beyond</a></span>
+                  </li>
+                  <li>
+                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://competitions.codalab.org/competitions/28022">https://competitions.codalab.org/competitions/28022</a></span>
                   </li>
                 </ul>
 
@@ -101,32 +125,23 @@
                   all labeled with bounding boxes for of human face, as the main training and/or validation sets. 
                  There will be a hold-out testing set of 4,000 low-light images, with human face bounding boxes annotated.</p>
                 <ul style="padding-left: 20px">
-                  <li><strong>Paper: </strong><span class="font-serif"><a href="" target="_blank">ArXiv</a></span>
+                  <li>
+                    <strong>Paper: </strong><span class="font-serif"><a href="" target="_blank">ArXiv</a></span>
                   </li>
-                  <li><strong>Release Date: </strong><span class="font-serif">March, 2019</span>
+                  <li>
+                    <strong>Release Date: </strong><span class="font-serif">March, 2019</span>
                   </li>
-                  <li><strong>Download: </strong><span class="font-serif">Extremely Dark Face<a href="https://drive.google.com/open?id=1SREpunOimpKbzsiojPSC7v4N6vhU_P5I" target="_blank">&nbsp Data (Updated!)</a><a href="https://drive.google.com/file/d/1bfAb9l6q2-4TlgO7JeJyHY22dKSrRBw5/view?usp=sharing" target="_blank">&nbsp Label</a></span>
+                  <li>
+                    <strong>Download: </strong><span class="font-serif">Extremely Dark Face<a href="https://drive.google.com/open?id=1SREpunOimpKbzsiojPSC7v4N6vhU_P5I" target="_blank">&nbsp Data (Updated!)</a><a href="https://drive.google.com/file/d/1bfAb9l6q2-4TlgO7JeJyHY22dKSrRBw5/view?usp=sharing" target="_blank">&nbsp Label</a></span>
+                  </li>
+                  <li>
+                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="TODO">TODO</a></span>
                   </li>
                 </ul>
 
-                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge3'>Sub-Challenge 1.3: Sea Life Detection in the Underwater Condition</h4>
-                <p>
-                In recent years, many scholars have proposed underwater image enhancement algorithms based on deep learning, but they still 
-                cannot meet the needs of practical applications. How to effectively solve the problems of color deviation and blurred details 
-                while ensuring the restoration of underwater image information is a major challenge for underwater image enhancement.
-                  
-                In this chanllenge, we provide 1,924 underwater images with the corresponding object annotations (including sea urchin, sea cucumber, and scallop)
-                as the training and/or validation sets.
-                A hold-out testing set of 360 real-world underwater images are also collected to evaluate the performance of submitted algorithms.</p>
-                <ul style="padding-left: 20px">
-                  <li><strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/1901.05320v2" target="_blank">ArXiv</a></span>
-                  </li>
-                  <li><strong>Release Date: </strong><span class="font-serif">March, 2019</span>
-                  </li>
-                  <li><strong>Download: </strong><span class="font-serif"><a href="https://drive.google.com/file/d/1XK73WFrQZvvEe6u2kMsDGmUO5BSVvG5g/view?usp=sharing" target="_blank">Underwater Dataset</a></span>
-                  </li>
-                </ul>
-                <p style="text-align: justify;">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2020.ug2challenge@gmail.com">cvpr2020.ug2challenge@gmail.com</a></p>
+                <p style="text-align: justify;">
+                  If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge@gmail.com">cvpr2021.ug2challenge@gmail.com</a>
+                </p>
 
               </div>
             </div>
