@@ -65,7 +65,7 @@
         <div class="container" style="width:100%">
           <div class="row"  style="padding: 40px 40px 0px 40px">
             <div class="col-sm-6 col-sm-offset-3">
-              <h2 class="module-title font-alt" style="margin: 0 0 20px">Challenge 2 (FlatCam) Datasets</h2>
+              <h2 class="module-title font-alt" style="margin: 0 0 20px">Challenge 2 (Action Recognition in the Dark) Datasets</h2>
             </div>
           </div>
         </div>
@@ -74,70 +74,83 @@
       <section class="module" style="padding: 30px 0;" id='track2'>
         <div class="container" >
           <div class="row">
-            <h3 class="module-title font-alt align-left" style="margin-bottom: 40px"><span class="fas fa-cloud-sun-rain"></span> Track 2: FlatCam for Faces</h3>
+            <h3 class="module-title font-alt align-left" style="margin-bottom: 40px"><span class="fas fa-cloud-sun-rain"></span> Track 2: Action Recognition from Dark Videos</h3>
             <div class="col-sm-12 col-md-12 col-lg-12">
               <div class="work-details">
                 <h4 class="work-details-title font-alt">About the Dataset</h4>
-                <p>We provide two types of data for Challenge 2.
-                  For each type of data, we provide both FlatCam sensor measurements, as well as FlatCam Tikhonov reconstructions.
-                  You need not use all data for an individual subchallenge, and some data may be more appropriate for some subchallenges than others.
-                  We do not explicitly split the data into training and validation sets and leave that to the participant.
+                <p>
+                  The ARID dataset is a dataset dedicated for the action recognition task in dark videos (without additional sensors such as IR sensor). 
+                  It is the first of its kind to our knowledge. For this track, we structure it into two sub-challenges. 
+                  Each challenge features different actions and diverse training protocols.
                 </p>
-                <p>The first type of data is the <b>FlatCam Face Dataset (FCFD)</b>, a dataset of 87 subjects captured with a FlatCam prototype in a variety of conditions.
-                  The test dataset for all subchallenges is composed of images captured in the same manner as the FCFD (but with different subjects).
-                  Thus, the FCFD is the closest resemblance to the challenge's test images.</p>
-                <p><ul><li>The second type of data is <b>display-captured FlatCam images</b>.
-                  These are images captured by the FlatCam prototype of a computer monitor displaying images from popular datasets.
-                  While they are not captures of real scenes, the original images displayed on the monitor provide corresponding ground truth images.</li></ul></p>
+                <p>
+                  <ul>Dataset and baseline report: <a href='https://arxiv.org/abs/2006.03876' style="color: #337ab7; text-decoration: underline">Arxiv</a>
+                    <li><i>Note that for this challenge track we have updated the dataset described in the report. 
+                    The updated dataset contains more scenarios but with the same amount of classes.</i></li>
+                  </ul>
+                </p>
                 <h5 class="work-details-title font-alt">Training & Evaluation</h5>
-                <p>In all three sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; but they must state so in their submissions.</p>
+                <p>
+                  In all two sub-challenges, the participant teams are allowed to use external training data that are not mentioned above,
+                  including self-synthesized or self-collected data; <b>but they must state so in their submissions ("Method description" section in Codalab)</b>.
+                  The ranking criteria will be the <b>Top-1 Accuracy</b> on each testing set.
+                </p>
 
-                <h4 class="work-details-title font-alt" id='subchallenge1'>FlatCam Face Dataset (FCFD)</h4>
-                <p>The FCFD can be obtained via this <a href="http://computationalimaging.rice.edu/databases/flatcam-face-dataset/">LINK</a>.</p>
-
-                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Display-captured CASIA Dataset</h4>
-                <p>A subset of the CASIA-WebFace dataset [1] containing ~380,000 images of different face identities (organized into different subfolders). Note that not all the original CASIA images were display-captured by the FlatCam.</p>
+                <h4 class="work-details-title font-alt" id='subchallenge1'>Sub-Challenge 2.1: Fully Supervised Action Recognition in the Dark</h4>
+                <p>
+                  Participants are to perform action recognition in dark videos in a fully supervised manner. 
+                  We provide a total of 1,837 videos capturing actions performed by volunteers in the dark as the main training and/or validation sets. 
+                  These actions include a total of 6 classes (running, sitting, standing, turning, walking and waving). 
+                  The labels of these training videos are all provided in a single <i>.csv</i> file.
+                  For evaluation, a final action recognition test would be performed on a hold-out test set with 914 videos.
+                  The hold-out test set contain the same classes as the provided training set.
+                </p>
                 <ul style="padding-left: 20px">
-                  <li><strong>Original Images: </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1kB0CSzRx16InEdRQlWfz8WbSSINxdA7O/view?usp=sharing">LINK</a></span></li>
-                  <li><strong>FlatCam Measurements (choose one of the following two options): </strong>
-                    <br>&nbsp;&nbsp;&nbsp;Option 1 -- Whole dataset (792 GB): <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1ayYKFXili1Bw34E_kR5gF3AKahG4TaSW/view?usp=sharing">LINK</a></span>
-                    <br>&nbsp;&nbsp;&nbsp;Option 2 -- Whole dataset split into smaller files:
-                    <ul style="padding-left: 60px">
-                      <li>File 1 (138 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/12JFylw_wM6kxFkG45j05VQlwMWKGhlkf/view?usp=sharing">LINK</a></span></li>
-                      <li>File 2 (93 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1TuUnDFj9sQnOj7jmx6FywPWMfRvgRJiJ/view?usp=sharing">LINK</a></span></li>
-                      <li>File 3 (83 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1AdrObH5hnCgR4ggYlS2jIO8QoQFU6diT/view?usp=sharing">LINK</a></span></li>
-                      <li>File 4 (80 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1aPm8MSj8__kptc7GS5EGJBnmtWal-VuF/view?usp=sharing">LINK</a></span></li>
-                      <li>File 5 (77 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/10W2PoW69XOJXDzaOKR3Xx8J8wj3_o-S4/view?usp=sharing">LINK</a></span></li>
-                      <li>File 6 (70 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/19o_OwBDPrNhoccbc-2EaOewWNTeymcQN/view?usp=sharing">LINK</a></span></li>
-                      <li>File 7 (67 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1xtwnMIHXnVfwHZIaxqT6zAVhZd5YXLTN/view?usp=sharing">LINK</a></span></li>
-                      <li>File 8 (55 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1WITyDgk9NWLvSDJat8a01ljtOklEcK3h/view?usp=sharing">LINK</a></span></li>
-                      <li>File 9 (55 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1N7m2gfIBJPDN5EZ6KEjaEnVoVly4EMwe/view?usp=sharing">LINK</a></span></li>
-                      <li>File 10 (49 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1GZZsZMXz7zoHgLSCjwGI4As1airpOntT/view?usp=sharing">LINK</a></span></li>
-                      <li>File 11 (24 GB) <span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1EaIQsxP24wPEWq4vhdkwuWuKHKNR-pNC/view?usp=sharing">LINK</a></span></li>
-                    </ul>
+                  <li>
+                    <strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/2006.03876" target="_blank">ArXiv</a></span>
                   </li>
-                  <li><strong>Tikhonov Reconstructions (30 GB): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1Oh1yuVZzzgwZWOShe_2aWgcCmI9WFwGL/view?usp=sharing">LINK</a></span>
+                  <li>
+                    <strong>Release Date: </strong><span class="font-serif">June, 2020</span>
                   </li>
-                  <li><strong>Filenames (only those that were display-captured): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1e-HfoPd1K7qSd3Zb_rfte6v-yrl8HY9T/view?usp=sharing">LINK</a></span>
+                  <li>
+                    <strong>Download: </strong><span class="font-serif"><a href="https://drive.google.com/drive/folders/1emLzMgBogVAbxsupwdxsftC8xG7FsEcM?usp=sharing" target="_blank">Sub-Challenge 2.1 Training Data</a></span>
+                  </li>
+                  <li>
+                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://competitions.codalab.org/competitions/28117">Codalab Link</a></span>
                   </li>
                 </ul>
-                <p>Reference [1]: D. Yi, Z. Lei, S. Liao, and S. Z. Li, "Learning face representation from scratch," arXiv preprint arXiv:1411.7923, 2014.</p>
 
-                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Display-captured WIDER Dataset</h4>
-                <p>A subset of the WIDER Face dataset [2] containing various crops of the dataset's images captured by the FlatCam. Bounding box information is also provided.</p>
+                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Sub-Challenge 2.2: Semi-supervised Action Recognition in the Dark</h4>
+                <p>
+                  Participants are expected to perform action recognition in dark videos in a semi-supervised manner. 
+                  We provide a a subset of the HMDB51 dataset that includes 643 videos from 5 classes (drink, jump, pick, pour and push), all of which with labels provided. 
+                  To boost the effectiveness of the approaches on real dark videos, we provide another unlabeled set of 1,513 videos with the same 5 classes from the ARID dataset, 
+                  which might be used at the participants’ discretization. 
+                  The final action recognition test would be performed on a hold-out test set of real dark videos from the ARID dataset with 722 videos.
+                  The hold-out test set contain the same classes as the provided training set.
+               </p>
                 <ul style="padding-left: 20px">
-                  <li><strong>Original Images: </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1MzloViQyHIOeaDzMgkN97swUJkDbjGTd/view?usp=sharing">LINK</a></span></li>
-                  <li><strong>FlatCam Measurements (28 GB): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1Xlmyc9WfGQpPlljxztK8AJXP-KODqMGS/view?usp=sharing">LINK</a></span>
+                  <li>
+                    <strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/2006.03876" target="_blank">ArXiv</a></span>
                   </li>
-                  <li><strong>Tikhonov Reconstructions (1 GB): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1TZRAPxkbTocpo2aMPaHY3jhrGeb2niub/view?usp=sharing">LINK</a></span>
+                  <li>
+                    <strong>Release Date: </strong><span class="font-serif">June, 2020</span>
                   </li>
-                  <li><strong>Original Images Bounding Boxes (xywh format): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1iuGnlLOh7eweWKvN1DI5K3bh6yaphaat/view?usp=sharing">LINK</a></span></li>
-                  <li><strong>Tikhonov Reconstruction Bounding Boxes (xywh format): </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1h8GEOV8pmzikzRfl165iflXALXaaK612/view?usp=sharing">LINK</a></span>
+                  <li>
+                    <strong>Download: </strong><span class="font-serif"><a href="https://drive.google.com/drive/folders/1yPt6HPypCQtfXBTb84mMhsjoC-8XZ-2c?usp=sharing" target="_blank">Sub-Challenge 2.2 Training Data</a></span>
                   </li>
-                  <li><strong>Filenames: </strong><span class="font-serif"><a href="https://drive.google.com/a/rice.edu/file/d/1fudE9sJBhFcVOtQT4_Wjx02brFKh4r8I/view?usp=sharing">LINK</a></span></li>
+                  <li>
+                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://competitions.codalab.org/competitions/28118">Codalab Link</a></span>
+                  </li>
                 </ul>
-                <p>Reference [2]: S. Yang, P. Luo, C. C. Loy, and X. Tang, “Wider face: A face detection benchmark,” in Proc. IEEE Conf. Comput. Vision Pattern Recognition, 2016.</p>
-                <p style="text-align: justify;">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2020.ug2challenge.track2@gmail.com">cvpr2020.ug2challenge.track2@gmail.com</a></p>
+
+                <p style="text-align: justify;">
+                  If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge@gmail.com">cvpr2021.ug2challenge@gmail.com</a>
+                </p>
+                <p style="padding-bottom: 40px"> References:<br>
+                  [1] Xu, Y., Yang, J., Cao, H., Mao, K., Yin, J. and See, S., 2020. ARID: A New Dataset for Recognizing Action in the Dark. arXiv preprint arXiv:2006.03876.<br>
+                  [2] Jhuang, H., Garrote, H., Poggio, E., Serre, T. and Hmdb, T., 2011, November. A large video database for human motion recognition. In Proc. of IEEE International Conference on Computer Vision (Vol. 4, No. 5, p. 6).<br>
+                </p>
               </div>
             </div>
           </div>

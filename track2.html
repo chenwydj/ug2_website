@@ -66,7 +66,8 @@
         <div class="container" style="width:100%">
           <div class="row" style="padding-top: 40px">
             <div class="col-sm-6 col-sm-offset-3">
-              <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 2: FlatCam for Faces: Enhancement, Reconstruction, and Verification</h2>
+              <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 2: Action Recognition from Dark Videos</h2>
+              <h3 class="module-subtitle font-serif" style="margin: 0 0 20px"><a href="https://forms.gle/qJZ7rdt44iMmBgci6" target="_blank" class="section-scroll btn btn-border-w btn-round">Register for this track</a></h3>
             </div>
           </div>
         </div>
@@ -74,16 +75,15 @@
 
       <section class="module-medium" style="padding-bottom: 0px">
 
-        <div class="container" style="font-size: 30px; padding-bottom: 20px">
+        <!-- <div class="container" style="font-size: 30px; padding-bottom: 20px">
           Link to the final submission form was sent via email. If you did not receive it, please email cvpr2020.ug2challenge.track2@gmail.com
-        </div>
-
-        <!-- FlatCam Figure -->
+        </div> -->
+        <!-- ARID Figure -->
         <div class="container" style="padding-bottom: 20px">
             <figure>
-              <img src="flatcam_fig.png" style="width:75%;height:75%;margin-left:auto;margin-right:auto;display:block;border: none;">
+              <img src="assets/images/sample_frames.png" style="width:75%;height:75%;margin-left:auto;margin-right:auto;display:block;border: none;">
               <figcaption style="width:80%;margin-left:auto;margin-right:auto;display:block">
-                <em>The FlatCam is a thin lensless camera whose measurements are passed into a reconstruction algorithm to produce an image. Figure from [1].</em></figcaption>
+                <em>Sampled frames from ARID dataset, a dataset dedicated for the action recognition task in dark videos (without additional sensors such as IR sensor). Figure from [1].</em></figcaption>
             </figure>
         </div>
 
@@ -91,31 +91,30 @@
         <div class="container">
           <div class="row" style="text-align: justify">
             <div class="col-sm-12 font-nat" style="font-size: 13pt">
-              <p><b><i>Registration form: <span class="font-serif"><a href="https://forms.gle/hQueBuMmfDx182EH9"> LINK</a></span></i></b></p> 
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/OMSXK7f0V6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p>Advances in computer vision and machine learning continuously give rise to an increasing number of applications. However, some of these applications, such as the Internet of Things, lightweight drones, etc., have strict size and cost constraints that standard lens-based cameras (with costs of &asymp; $20 and thicknesses of &asymp; 7mm) cannot satisfy. The FlatCam is a new lensless camera design from computational photography that aims to address these concerns by having a thickness of &asymp; 1mm and a predicted production cost of &lt; $1 at scale. Such a design can be more easily incorporated into highly constrained settings, allowing image inference tasks to be performed in stringent applications. </p>
-              <p>The FlatCam replaces the optical lenses of a standard lens-based camera with a thin amplitude mask containing multiple apertures and an accompanying image reconstruction algorithm [2]. 
-                Due to the absence of optical focusing elements and because of non-idealities in the reconstruction, FlatCam images come with a unique set of artifacts that have yet to be closely studied. 
-                What has been shown, however, is that applying a standard off-the-shelf face verification algorithm on FlatCam images without any modification to the algorithm yields very low accuracies even if the same algorithm performs very well on webcam images of the same scenes [1]. 
-                Thus, there is still a missing step before one can use the wealth of computer vision algorithms as is on FlatCam images. 
-                This step may be filled in by a proper image enhancement algorithm or by a vision-specific reconstruction algorithm, both of which are desired outcomes of this challenge. </p>
-              <p>In addition, for applications solely interested in performing a recognition task, image reconstruction may not even be necessary. 
-                It may be possible to obtain even better recognition performance by designing an algorithm that takes as inputs the unreconstructed FlatCam measurements and outputs the desired predictions without including an intermediate image reconstruction step. 
-                Direct recognition on coded computational photography measurements is relatively unstudied, and a third desired outcome of this challenge is an algorithm that can successfully do so on FlatCam images. </p>
-              <p>UG<sup>2</sup>+ Challenge 2 aims to improve the accuracy of face verification on FlatCam images via three different approaches represented by the following three sub-challenges:</p>
+              <!-- <p><b><i>Registration form: <span class="font-serif"><a href="https://forms.gle/hQueBuMmfDx182EH9"> LINK</a></span></i></b></p>  -->
+              <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/OMSXK7f0V6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+              <p>With the advances in computer vision technologies, especially video-based technologies, various automatic video-based tasks have received considerable attention. There have been increasing applications of these technologies in various fields, which include surveillance and smart homes. The advances can be credited in part to a rising number of video-based datasets, designed for a range of video-based tasks such as action recognition, localization and segmentation. Although much progress has been made, the progress is mostly limited to videos shot under “clear” environments, with normal illumination and contrast. Such limitation is partly due to the fact that current benchmark video-based datasets are collected from either crowdsourcing platforms or from public web video platforms directly. Either source contains mostly “clear” videos, where the actions are identifiable. However, there has been an increasing number of scenarios where videos shot under normal illumination may not be available. One notable scenario is night security surveillance, where security cameras are usually placed at alleys or fields with little lighting. The actions captured are hard to identify even by the naked eye. Although additional sensors, such as infrared imaging sensors, could be utilized for recognizing action in these environments, their cost prohibits the large scale deployment of these sensors. It is therefore greatly beneficial to explore possible video-based technologies that are robust to darkness, extracting effective action features from dark videos, which would benefit in various downstream applications.</p>
+              <p>Over the past few years, there has been a remarkable rise of research interest with regards to computer vision tasks in dark environments, which include dark face recognition and dark image enhancement. More recently, such research interests have been expanded to the video domain, especially towards darkness enhancement. However, it is noted that under image domain, visually enhanced dark images may not result in better classification accuracies when the same techniques are applied. Therefore it seems uncertain if the visually enhanced videos could necessarily result in better action recognition accuracies. Furthermore, with massive publicly available clear videos, it also seems promising to utilize them in some way, with possible pre-processing or post-processing steps, to capture actions with high robustness towards darkness.</p>  
+              <p>UG<sup>2</sup>+ Challenge 2 aims to promote video-based action recognition algorithms’ robustness with special focus on dark videos via two different approaches represented by the following two sub-challenges:</p>
                 <ol>
-                  <li>Image Enhancement for FlatCam Face Verification</li>
-                  <li>Image Reconstruction for FlatCam Face Verification</li>
-                  <li>End-to-End Face Verification on FlatCam Measurements</li>
+                  <li>Fully Supervised Action Recognition in the Dark</li>
+                  <li>Semi-supervised Action Recognition in the Dark</li>
                 </ol>
-              
-              <p style="text-align: justify; ">In all three sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; but they must state so in their submissions. </p>
 
-              <p style="text-align: justify">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge.track2@gmail.com">cvpr2021.ug2challenge.track2@gmail.com</a></p>
+              <p style="text-align: justify; ">
+                In all two sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data;
+                <b>but they must state so in their submissions ("Method description" section in Codalab)</b>.
+                <!-- Each leaderboard will be divided into two ranking lists: with and without external data. -->
+                The ranking criteria will be the <b>Top-1</b> accuracy on each testing set.
+              </p>
+              
+              <!-- <p style="text-align: justify; ">In all three sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; but they must state so in their submissions. </p> -->
+
+              <!-- <p style="text-align: justify">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge.track2@gmail.com">cvpr2021.ug2challenge.track2@gmail.com</a></p> -->
               
               <p style="padding-bottom: 40px"> References:<br>
-                  [1] J. Tan, L. Niu, J. Adams, V. Boominathan, J. T. Robinson, R. G. Baraniuk, and A. Veeraraghavan, "Face Detection and Verification Using Lensless Cameras," in IEEE Trans. Comput. Imag., vol. 5, no. 2, pp. 180-194, June 2019.<br>
-                  [2] S. M. Asif, A. Ayremlou, A. Sankaranarayanan, A. Veeraraghavan, and R. G. Baraniuk, "FlatCam: Thin, Lensless Cameras Using Coded Aperture and Computation," in IEEE Trans. Comput. Imag., vol. 3, no. 3, pp.384-397, July 2016.
+                  [1] Xu, Y., Yang, J., Cao, H., Mao, K., Yin, J. and See, S., 2020. ARID: A New Dataset for Recognizing Action in the Dark. arXiv preprint arXiv:2006.03876.<br>
+                  [2] Jhuang, H., Garrote, H., Poggio, E., Serre, T. and Hmdb, T., 2011, November. A large video database for human motion recognition. In Proc. of IEEE International Conference on Computer Vision (Vol. 4, No. 5, p. 6).<br>
               </p>
 
             </div>
