@@ -85,9 +85,9 @@
             <div class="col-sm-12 font-nat" style="font-size: 13pt">            
               <h3 class="module-title font-alt" style="margin: 0px; padding: 30px 0 20px">Timetable</h3>
               <ul>
-                <li>Challenge Registration and Dry-run**: February 8 ~ April 1, 2021</li>
+                <li>Challenge Registration and Dry-run**: February 8 ~ April 30, 2021</li>
                 <!-- <li>Dry run period**: April 1 ~ May 1, 2021</li> -->
-                <li>Final Submissions: April 28 ~ May 1, 2021</li>
+                <li>Final Submissions: April 30 ~ May 1, 2021</li>
                 <li>Winner Announcement: May 20, 2021</li>
               </ul>
               ** Dry-run phase: A set of dry-run (validation) data for each sub-track is provided for debugging purpose only. This set is provided just to validate your prediction format (so you can work with our final testing in the end). The Top-1 Accuracy on this set is not accurate due to small amount of data. Feedback are provided on this dry-run (validation) set only.
@@ -153,61 +153,90 @@
                 </li>
                 <li>The "Team Name" in the Submission page should match the Team Name as registered in the Registration Form.</li>
                 <!-- <li>Dry-run videos: downloadable on April 1.</li> -->
-                <li>Test videos: downloadable April 28 ~ May 1.</li>
+                <li>Test videos: downloadable April 30 (GMT+0 00:00) ~ May 1 (GMT+0 00:00).</li>
+                <li>Teams with Top-7 on the final testing Codalab leaderboard would go through a winner validation and confirmation process, <b>see below for details.</b></li>
               </ul>
               <p style="text-align: justify;">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge@gmail.com">cvpr2021.ug2challenge@gmail.com</a></p>
             </div>
 
-            <!-- <div class="col-sm-12 font-nat" style="font-size: 13pt">            
-              <h3 class="module-title font-alt" style="margin: 0px; padding: 30px 0 20px">Winner/Runner-up Validation Process</h3>
+            <div class="col-sm-12 font-nat" style="font-size: 13pt">            
+              <h3 class="module-title font-alt" style="margin: 0px; padding: 30px 0 20px">Winner Validation and Confirmation Process</h3>
 
-              <p style="text-align: justify;"><b>Winner and two runner-ups on leaderboard are required to submit their code for the validation</b>. Please follow steps below:</p>
+              <p style="text-align: justify;"><b>Teams with Top-7 on the final testing Codalab leaderboard would be required to submit their code for the winner validation and confirmation process. Please follow the instructions below carefully to ensure smooth confirmation process of your results:</b></p>
               <ol style="text-align: justify;">
-                <li>Download the training/validation datasets and the Development Kit (<a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://hub.docker.com/r/scaffrey/eval_tools">DevKit</a>).</li>
-                <li>Train or finetune your model and run your trained model on the validation set. You can use the DevKits to evaluate the validation performance.</li>
-                <li>A more detailed description of the usage of the DevKit and how to place the data could be found in the DevKits or at <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://github.com/xuyu0010/ARID_UG2_2.1">Track 2.1</a> or <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://github.com/xuyu0010/ARID_UG2_2.2">Track 2.2</a> base code repository</li>
-                <li>We will use the two commands below to run your docker submission:
-                  <ul>
-                    <li><code>docker pull your_dockerhub_id/your_docker_name:tag</code></li>
-                    <li><code>nvidia-docker run -ti -v $user_output_path:/predictions/ -v $user_input_path:/videos/ --entrypoint /bin/bash your_dockerhub_id/your_docker_name:tag /run.sh /videos /predictions</code></li>
-                  </ul>
-                </li>
-                <li>Please pack your running scripts in ONE bash file named run.sh in the docker. We will only run the bash file in each docker, which should take input from given image path and output predictions in the given destination path. Please refer to your own data path (i.e. user_input_path1, user_label_path1 …) corresponding.</li>
-                <li>Upload your dock to <a href="https://hub.docker.com/">Docker Hub</a> and submit your docker link to the corresponding sub challenge. Check your uploaded docker with the testing code provided in our DevKits to make sure that the uploaded docker can work correctly. Note that, the basic docker should inherit from our provided docker template, whose docker link will be provided in DevKits. The organizers will not guarantee to test with the dockers that are built from other templates.</li>
-                <li>Each team may submit up to 3 algorithms per sub challenge. All submissions (per sub challenge) will be held within one single Docker container to be uploaded to Docker Hub. The Docker container will contain all dependencies and code required to perform the model’s operation and will execute the model(s) contained upon run.</li>
+                <li>Download the training/validation/testing datasets. The testing dataset would be available for download on April 30 (GMT+0, 00:00).</li>
+                <li>Train or finetune your model. For obtaining the final testing result, run your trained model on the testing set.</li>
+                <li>Pack your code into <b>one single .zip file</b>. By default we would be using raw video as the input to your code. If your algorithm requires the use of individual video frame, include you frame extraction code as well in the zip file.</li>
+                <li>Include a detailed instruction of the placement of the training, validation and testing data (i.e. where to place the data to enable training and testing).</li>
+                <li>You should contain at most three running scripts, one for data pre-processing (named <code>run_preproc.sh</code>), one for training (named <code>run_train.sh</code>) and one for testing (inference) (named <code>run_test.sh</code>). We will <b>ONLY</b> run the three scripts during the validation process.</li>
+                <li>Each team must only submit <b>ONLY ONE</b> zip file with <b>ONLY ONE SET</b> of algorithm corresponding to the submission result in the testing leaderboard. The zip file should contain all dependencies and code required to perform the algorithm's operation.</li>
               </ol>
 
-              <h3 class="work-details-title font-alt">Development Kit</h3>
-              <p style="text-align: justify;">The Development Kit consists of a Docker file containing the basic structure for the algorithm submission, as well as instructions on how to pull and run a supplemental quantitative classification module for the second challenge. The videos, annotation, and lists specifying the training/validation sets for the challenge are provided separately, and can be obtained via: Google Drive.</p>
-              <p style="text-align: justify;">Each team must submit at least one algorithm for each challenge they wish to participate in. Participants who have investigated several algorithms may submit up to 3 algorithms per challenge. All submissions (per challenge) will be held within one single Docker container to be uploaded to Docker Hub. The Docker container will container all dependencies and code required to perform the model’s operation and will execute the model(s) contained upon run.</p>
-              <p style="text-align: justify;">The input videos will be provided to the container at run time through Docker’s mounting option, as will the output folders for the model(s) to save their results. Each model must be run on all videos contained within the input folder and must save the new videos to their respective output folder locations, without any name changes or missing videos.</p>
+              <h3 class="work-details-title font-alt">Running with NVIDIA Container Toolkit (nvidia-docker)</h3>
+              <p style="text-align: justify;">To ensure a smooth validation and confirmation process, we <b>strongly recommend</b> participants to run or verify their code with Docker and NVIDIA Container Toolkit (nvidia-docker). Here we provide detailed instructions to install and run nvidia-docker.</p>
+              <ol>
+                <li>Install NVIDIA GPU Driver using <b>.run</b> file. To ensure that you could run the required docker image, please install the GPU Driver with version <b>>= 440.33</b>.</li>
+                <li>Install docker and nvidia-docker following the instructions provided by NVIDIA <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html">here</a>. You may also choose to install older docker version following the instructions provided by Docker <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://docs.docker.com/engine/install/ubuntu/">here</a>.</li>
+                <li>Our default docker image is pulled from NVIDIA NGC Catelog, the details of the docker is provided below. Follow the following two steps to pull and run the default docker image (also provided <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://ngc.nvidia.com/catalog/containers/nvidia:pytorch">here</a> or <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow">here</a>):
+                  <br/>Using Pytorch:
+                  <ul>
+                    <li><code>docker pull nvcr.io/nvidia/pytorch:20.02-py3</code></li>
+                    <li><code>docker run --gpus all -it --rm -v {local_dir}:{container_dir} nvcr.io/nvidia/pytorch:20.02-py3</code> (Docker >= 19.03)</li>
+                    <li><code>nvidia-docker run -it --rm -v {local_dir}:{container_dir} nvcr.io/nvidia/pytorch:20.02-py3</code> (Docker <= 19.02)</li>
+                  </ul>
+                  Using TensorFlow2:
+                  <ul>
+                    <li><code>docker pull nvcr.io/nvidia/tensorflow:20.03-tf2-py3</code></li>
+                    <li><code>docker run --gpus all -it --rm -v {local_dir}:{container_dir} nvcr.io/nvidia/tensorflow:20.03-tf2-py3</code> (Docker >= 19.03)</li>
+                    <li><code>nvidia-docker run -it --rm -v {local_dir}:{container_dir} nvcr.io/nvidia/tensorflow:20.03-tf2-py3</code> (Docker <= 19.02)</li>
+                  </ul>
+                  Using TensorFlow1:
+                  <ul>
+                    <li><code>docker pull nvcr.io/nvidia/tensorflow:20.03-tf1-py3</code></li>
+                    <li><code>docker run --gpus all -it --rm -v {local_dir}:{container_dir} nvcr.io/nvidia/tensorflow:20.03-tf1-py3</code> (Docker >= 19.03)</li>
+                    <li><code>nvidia-docker run -it --rm -v {local_dir}:{container_dir} nvcr.io/nvidia/tensorflow:20.03-tf1-py3</code> (Docker <= 19.02)</li>
+                  </ul>
+                </li>
+                <li>Verify your algorithm using the running docker container. For more information on running docker containers, you may refer to the documentation <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://docs.docker.com/engine/reference/run/">here</a>.</li>
+              </ol>
+              <p style="text-align: justify;">The use of Docker and nvidia-docker is <b>NOT</b> mandatory, but we would use the above docker images during the validation and confirmation process to ensure fair comparison between algorithms.</p>
 
               <h3 class="work-details-title font-alt">Requirements</h3>
               <b>Software</b>
               <ul>
                 <li>Docker-CE</li>
                 <li>NVIDIA Docker</li>
-                <li>CUDA 9.0</li>
-                <li>CuDNN v7.0</li>
+                <li>NVIDIA GPU Driver >= 440.33</li>
               </ul>
               <b>Docker</b>
               <p style="text-align: justify;">Our provided Docker will include the following software</p>
+              For <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel_20-02.html#rel_20-02">PyTorch</a>:
               <ul>
-                <li>Ubuntu 16.04</li>
-                <li>CUDA 8.0/9.0</li>
-                <li>CUDNN v7</li>
-                <li>Pytorch (highly recommended)</li>
-                <li>Tensorflow</li>
+                <li>Ubuntu 18.04</li>
+                <li>PyTorch 1.4.0a0+a5b4d78</li>
+                <li>NVIDIA CUDA 10.2.89</li>
+                <li>NVIDIA cuDNN 7.6.5</li>
+                <li>TensorBoard 2.1.0</li>
+              </ul>
+              For <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel_20-03.html#rel_20-03">Tensorflow</a>:
+              <ul>
+                <li>Ubuntu 18.04</li>
+                <li>TensorFlow 1.15.2 or TensorFlow 2.1.0</li>
+                <li>NVIDIA CUDA 10.2.89</li>
+                <li>NVIDIA cuDNN 7.6.5</li>
               </ul>
               <b>Hardware</b>
               <p style="text-align: justify;">The proposed algorithms should be able to run in systems with:</p>
               <ul>
-                <li>Up to and including GeForce GTX 1080 Ti 11 GB</li>
-                <li>(Recommended) Up to and including 32gb memory</li>
-                <li>(Recommended) Up to and including 8 cores</li>
+                <li>Up to and including Titan Xp 12 GB</li>
+                <li>Up to and including 12 cores</li>
+                <li>Up to and including 32gb memory</li>
               </ul>
               <p style="text-align: justify;">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge@gmail.com">cvpr2021.ug2challenge@gmail.com</a></p>
-            </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
           </div>
         </div>
       </section>
@@ -241,7 +270,7 @@
                 <li><p style="text-align: justify;">Foreign Nationals and International Developers: All Developers can participate with this exception: residents of, Iran, Cuba, North Korea, Crimea Region of Ukraine, Sudan or Syria or other countries prohibited on the U.S. State Department’s State Sponsors of Terrorism list.  In addition, Developers are not eligible to participate if they are on the Specially Designated National list promulgated and amended, from time to time, by the United States Department of the Treasury.  It is the responsibility of the Developer to ensure that they are allowed to export their technology solution to the United States for the Live Test.  Additionally, it is the responsibility of participants to ensure that no US law export control restrictions would prevent them from participating when foreign nationals are involved.  If there are US export control concerns, please contact the organizers and we will attempt to make reasonable accommodations if possible.</p></li>
                 <li><p style="text-align: justify;">If you are entering as a representative of a company, educational institution or other legal entity, or on behalf of your employer, these rules are binding on you, individually, and/or the entity you represent or are an employee. If you are acting within the scope of your employment, as an employee, contractor, or agent of another party, you warrant that such party has full knowledge of your actions and has consented thereto, including your potential receipt of a prize. You further warrant that your actions do not violate your employer’s or entity’s policies and procedures.</p></li>
                 <li><p style="text-align: justify;">The organizers reserve the right to verify eligibility and to adjudicate on any dispute at any time. If you provide any false information relating to the prize challenge concerning your identity, email address, ownership of right, or information required for entering the prize challenge, you may be immediately disqualified from the challenge.</p></li>
-                <li><p style="text-align: justify;"><i>Individual Account. You may make submissions only under one, unique registration. You will be disqualified if you make submissions through more than one registration. You may submit up to 3 submissions (one per challenge), containing at most 3 algorithms per submission. Any submissions that does not adhere to this will be disqualified.</i></p></li>
+                <li><p style="text-align: justify;"><b>Accounts. For the final testing phase, you may make submissions only under one, unique registration per team. Submission should be made such that the "Team Name" field in Codalab matches your team name in the registration. You will be disqualified if you make submissions for your final testing phase through more than one registration or if your team name cannot be found in the registration. Each TEAM may submit up to ten submissions per day per challenge. For the final winner validation/confirmation process, eligible teams should submit code containing only ONE algorithms per TEAM. Any submissions that does not adhere to this during the testing or winner validation/confirmation process may be subject to disqualification.</b></p></li>
               </ul>
               <p>The organizers reserve the right to disqualify any participating team for any of the reasons mentioned above and if deemed necessary.</p>
               <h3 class="work-details-title font-alt">Warranty, indemnity and release</h3>
