@@ -160,7 +160,7 @@
 
               <p style="text-align: justify;"><b>Winner and two runner-ups on leaderboard are required to submit their code for the validation</b>. Please follow steps below:</p>
               <ol style="text-align: justify;">
-                <li>Download the training/validation datasets and the Development Kit (<a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://hub.docker.com/r/scaffrey/eval_tools">DevKit</a> - Undergoing testing and to be finalized soon).</li>
+                <li>Download the training/validation datasets and the Development Kit Docker Image (<a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://hub.docker.com/r/scaffrey/eval_tools">DevKit</a>).</li>
                 <li>Train or finetune your model and run your trained model on the validation set. You can use the DevKits to evaluate the validation performance.</li>
                 <!-- <li>Please make sure that:
                   <ul>
@@ -178,15 +178,25 @@
                     <li><code>nvidia-docker run -ti -v $user_output_path:/predictions/ -v $user_input_path:/images/ --entrypoint /bin/bash your_dockerhub_id/your_docker_name:tag /run.sh /images /predictions</code></li>
                   </ul>
                 </li>
-                <li>Please pack your running scripts in ONE bash file named run.sh in the docker. We will only run the bash file in each docker, which should take input from given image path and output predictions in the given destination path. Please refer to your own data path (i.e. user_input_path1, user_label_path1 …) corresponding.</li>
-                <li>Upload your dock to <a href="https://hub.docker.com/">Docker Hub</a> and submit your docker link to the corresponding sub challenge. Check your uploaded docker with the testing code provided in our DevKits to make sure that the uploaded docker can work correctly. Note that, the basic docker should inherit from our provided docker template, whose docker link will be provided in DevKits. The organizers will not guarantee to test with the dockers that are built from other templates.</li>
-                <li>Each team may submit up to 3 algorithms per sub challenge. All submissions (per sub challenge) will be held within one single Docker container to be uploaded to Docker Hub. The Docker container will contain all dependencies and code required to perform the model’s operation and will execute the model(s) contained upon run.</li>
+                <li>Please pack your running scripts in ONE bash file named run.sh in the docker. We will only run the bash file in each docker, which should take input from given image path
+                  and output predictions in the given destination path. Please refer to your own data path (i.e. user_input_path1, user_label_path1 …) corresponding.</li>
+                <li>Upload your docker image to <a href="https://hub.docker.com/" _target="blank">Docker Hub</a> and submit your docker link to the corresponding sub challenge by emailing us. Check your uploaded docker with the
+                  <b>testing inference</b> code provided in our DevKits to make sure that the uploaded docker can work correctly. Note that, the your docker image should inherit from our provided docker template.
+                  The organizers will not guarantee to test with the dockers that are built from other templates.</li>
+                <!-- <li>Each team may submit up to 3 algorithms per sub challenge. All submissions (per sub challenge) need be held within one single Docker container to be uploaded to Docker Hub. -->
+                <li>The Docker container must contain all dependencies and code required to perform the model’s inference and will execute the model(s) contained upon run.</li>
               </ol>
 
               <h3 class="work-details-title font-alt">Development Kit</h3>
-              <p style="text-align: justify;">The Development Kit consists of a Docker file containing the basic structure for the algorithm submission, as well as instructions on how to pull and run a supplemental quantitative classification module for the second challenge. The images, annotation, and lists specifying the training/validation sets for the challenge are provided separately, and can be obtained via: Google Drive.</p>
-              <p style="text-align: justify;">Each team must submit one algorithm for each challenge they wish to participate in. Participants who have investigated several algorithms may submit up to 3 algorithms per challenge. All submissions (per challenge) will be held within one single Docker container to be uploaded to Docker Hub. The Docker container will container all dependencies and code required to perform the model’s operation and will execute the model(s) contained upon run.</p>
-              <p style="text-align: justify;">The input images will be provided to the container at run time through Docker’s mounting option, as will the output folders for the model(s) to save their results. Each model must be run on all images contained within the input folder and must save the new images to their respective output folder locations, without any name changes or missing images.</p>
+              <p style="text-align: justify;">The Development Kit consists of a Docker file containing the basic structure for the algorithm submission, as well as instructions on how to pull
+                and run a supplemental quantitative classification module for the second challenge. The images, annotation, and lists specifying the training/validation sets for the challenge
+                are provided separately in the <a href="dataset21_t1.html" _target="blank">dataset download page</a>.</p>
+              <!-- <p style="text-align: justify;">Each team must submit one algorithm for each challenge they wish to participate in. Participants who have investigated several algorithms may
+                submit up to 3 algorithms per challenge. All submissions (per challenge) will be held within one single Docker container to be uploaded to Docker Hub. The Docker container
+                will container all dependencies and code required to perform the model’s operation and will execute the model(s) contained upon run.</p> -->
+              <p style="text-align: justify;">The input images will be provided to the container at run time through Docker’s mounting option, as will the output folders for the model(s)
+                to save their results. Each model must be run on all images contained within the input folder and must save the new images to their respective output folder locations,
+                without any name changes or missing images.</p>
 
               <h3 class="work-details-title font-alt">Requirements</h3>
               <b>Software</b>
