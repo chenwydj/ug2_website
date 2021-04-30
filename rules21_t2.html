@@ -87,7 +87,8 @@
               <ul>
                 <li>Challenge Registration and Dry-run**: February 8 ~ April 30, 2021</li>
                 <!-- <li>Dry run period**: April 1 ~ May 1, 2021</li> -->
-                <li>Final Submissions: April 30 ~ May 1, 2021</li>
+                <li>Testing Phase and Result Submissions: April 30 (GMT+0 or UTC) ~ May 1, 2021 (GMT+0 or UTC)</li>
+                <li>Winner Validation and Confirmation Zip File Submission (see guidelines below): May 4, 2021 (GMT+0 or UTC)</li>
                 <li>Winner Announcement: May 20, 2021</li>
               </ul>
               ** Dry-run phase: A set of dry-run (validation) data for each sub-track is provided for debugging purpose only. This set is provided just to validate your prediction format (so you can work with our final testing in the end). The Top-1 Accuracy on this set is not accurate due to small amount of data. Feedback are provided on this dry-run (validation) set only.
@@ -169,6 +170,7 @@
                 <li>Pack your code into <b>one single .zip file</b>. By default we would be using raw video as the input to your code. If your algorithm requires the use of individual video frame, include you frame extraction code as well in the zip file.</li>
                 <li>Include a detailed instruction of the placement of the training, validation and testing data (i.e. where to place the data to enable training and testing).</li>
                 <li>You should contain at most three running scripts, one for data pre-processing (named <code>run_preproc.sh</code>), one for training (named <code>run_train.sh</code>) and one for testing (inference) (named <code>run_test.sh</code>). We will <b>ONLY</b> run the three scripts during the validation process.</li>
+                <li>Including the trained weight of your algorithm that could lead to the result shown in the leaderboard is highly recommended.</li>
                 <li>Each team must only submit <b>ONLY ONE</b> zip file with <b>ONLY ONE SET</b> of algorithm corresponding to the submission result in the testing leaderboard. The zip file should contain all dependencies and code required to perform the algorithm's operation.</li>
               </ol>
 
@@ -176,6 +178,7 @@
               <p style="text-align: justify;">To ensure a smooth validation and confirmation process, we <b>strongly recommend</b> participants to run or verify their code with Docker and NVIDIA Container Toolkit (nvidia-docker). Here we provide detailed instructions to install and run nvidia-docker.</p>
               <ol>
                 <li>Install NVIDIA GPU Driver using <b>.run</b> file. To ensure that you could run the required docker image, please install the GPU Driver with version <b>>= 440.33</b>.</li>
+                <li>For the convenience of all participants, you may run the script provided <a style="color: #337ab7; text-decoration: underline" href="assets/files/install_nvidia_docker2_update.sh" target="_blank">here</a>. Alternatively, follow the following steps.</li>
                 <li>Install docker and nvidia-docker following the instructions provided by NVIDIA <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html">here</a>. You may also choose to install older docker version following the instructions provided by Docker <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://docs.docker.com/engine/install/ubuntu/">here</a>.</li>
                 <li>Our default docker image is pulled from NVIDIA NGC Catelog, the details of the docker is provided below. Follow the following two steps to pull and run the default docker image (also provided <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://ngc.nvidia.com/catalog/containers/nvidia:pytorch">here</a> or <a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow">here</a>):
                   <br/>Using Pytorch:
