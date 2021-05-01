@@ -183,7 +183,8 @@
                 </li>
                 <li>As shown in the command above, the input images will be provided to the guest container (<code>/images/</code>) at run time through Docker’s mounting option (<code>-v</code>), as will the output folders (<code>/predictions/</code>) for the model
                 to save their results. Each model must be run on all images contained within the input folder and must save results to output folder location, without any name changes or missing images.</li>
-                <li>Please validate and pack your running scripts in ONE bash file named run.sh in the docker. We will only run the bash file in each docker.</li>
+                <li>Please validate and pack your running scripts in ONE bash file named run.sh in the docker. We will only run the bash file in each docker.
+                  You do not to include any images inside your docker image, as we will use the same testing images for this validation process.</li>
                 <li>Commit and push your docker image to <a href="https://hub.docker.com/" _target="blank">Docker Hub</a> and submit your docker link to the corresponding sub challenge by emailing us: <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge@gmail.com">cvpr2021.ug2challenge@gmail.com</a>.
                   <!-- Check your uploaded docker with the <b>testing inference</b> code provided in our DevKits to make sure that the uploaded docker can work correctly. -->
                   Note that, the your docker image should inherit from our provided docker template. The organizers will not guarantee to test with the dockers that are built from other templates.</li>
