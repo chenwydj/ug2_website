@@ -178,13 +178,14 @@
                   <ul>
                     <li><code>docker pull your_dockerhub_id/your_docker_name:tag</code></li>
                     <li><code>nvidia-docker run -ti -v $host_output_path:/predictions/ -v $host_input_path:/images/ --entrypoint /bin/bash your_dockerhub_id/your_docker_name:tag /run.sh /images /predictions</code></li>
+                    <li><code>run.sh</code> is a bash file where you should put your model inference code inside. A toy example is to put <code>CUDA_VISIBLE_DEVICES=0 python inference.py --input_dir $1 --output_dir $2</code> inside your <code>run.sh</code>.</li>
                     <li>We will then use the same scoring script on Codalab to reproduce your mAP.</li>
                   </ul>
                 </li>
                 <li>As shown in the command above, the input images will be provided to the guest container (<code>/images/</code>) at run time through Docker’s mounting option (<code>-v</code>), as will the output folders (<code>/predictions/</code>) for the model
                 to save their results. Each model must be run on all images contained within the input folder and must save results to output folder location, without any name changes or missing images.</li>
                 <li>Please validate and pack your running scripts in ONE bash file named run.sh in the docker. We will only run the bash file in each docker.
-                  You do not to include any images inside your docker image, as we will use the same testing images for this validation process.</li>
+                  You do not need to include any images or prediction files inside your docker image, as we will use the same testing images for this validation process and we will reproduce the inference.</li>
                 <li>Commit and push your docker image to <a href="https://hub.docker.com/" _target="blank">Docker Hub</a> and submit your docker link to the corresponding sub challenge by emailing us: <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge@gmail.com">cvpr2021.ug2challenge@gmail.com</a>.
                   <!-- Check your uploaded docker with the <b>testing inference</b> code provided in our DevKits to make sure that the uploaded docker can work correctly. -->
                   Note that, the your docker image should inherit from our provided docker template. The organizers will not guarantee to test with the dockers that are built from other templates.</li>
