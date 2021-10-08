@@ -66,8 +66,8 @@
         <div class="container" style="width:100%">
           <div class="row" style="padding-top: 40px">
             <div class="col-sm-6 col-sm-offset-3">
-              <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 1: Object Detection in Poor Visibility Environments</h2>
-              <h3 class="module-subtitle font-serif" style="margin: 0 0 20px"><a href="https://forms.gle/Yf853QgPL5xCUy5k6" target="_blank" class="section-scroll btn btn-border-w btn-round">Register for this track</a></h3>
+              <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 1: Object Detection in Haze</h2>
+              <h3 class="module-subtitle font-serif" style="margin: 0 0 20px"><a href="" target="_blank" class="section-scroll btn btn-border-w btn-round">Register for this track</a></h3>
             </div>
           </div>
         </div>
@@ -79,23 +79,25 @@
             <div class="col-sm-12 font-nat" style="font-size: 13pt">
               <p>Many emerging applications, such as UAVs, autonomous/assisted driving, search and rescue robots, environment monitoring, security surveillance, transportation and inspection, hinge on computer vision-based sensing and understanding of outdoor environments. Such systems concern a wide range of target tasks such as detection, recognition, segmentation, tracking, and parsing. However, the performances of visual sensing and understanding algorithms will be largely jeopardized by various challenging conditions in unconstrained and dynamic degraded environments, e.g., moving platforms, bad weathers, and poor illumination. While most current vision systems are designed to perform in “clear” environments, i.e., where subjects are well observable without (significant) attenuation or alteration, a dependable vision system must reckon with the entire spectrum of complex unconstrained outdoor environments. Taking autonomous driving for example: the industry players have been tackling the challenges posed by inclement weathers; however, a heavy rain, haze or snow will still obscure the vision of on-board cameras and create confusing reflections and glare, leaving the state-of-the-art self-driving cars in struggle. Another illustrative example can be found in city surveillance: even the commercialized cameras adopted by governments appear fragile in challenging weather conditions. Therefore, it is highly desirable to study to what extent, and in what sense, such challenging visual conditions can be coped with, for the goal of achieving robust visual sensing and understanding in the wild, that benefit security/safety, autonomous driving, robotics, and an even broader range of signal and image processing applications</p>
               <p>Despite the blooming research on removing or alleviating the impacts of those challenging, such as dehazing, rain removal and illumination enhancement, a unified view towards those problems has been absent, so have collective efforts for resolving their common bottlenecks. On one hand, such challenging visual conditions usually give rise to nonlinear and data-dependent degradations that will be much more complicated than the well-studied noise or motion blur, which follow some parameterized physical models a priori. That will naturally motivate a combination of model-based and data-driven approaches. On the other hand, it should be noted that most existing research works cast the handling of those challenging conditions as a post-processing step of signal restoration or enhancement after sensing, and then feed the restored data for visual understanding. The performance of high-level visual understanding tasks will thus largely depend on the quality of restoration or enhancement.It remains questionable whether restoration-based approaches would actually boost the visual understanding performance, as the restoration/enhancement step is not optimized towards the target task and may bring in misleading information and artifacts too. </p>
-              <p>UG<sup>2</sup>+ Challenge 1 aims to evaluate and advance object detection algorithms’ robustness in specific poor-visibility environmental situations including challenging weather and lighting conditions. It consists of the two sub-challenges below:
-                <ol>
+              <p>UG<sup>2</sup>+ Challenge 1aims to evaluate and advance object detection algorithms’ robustness on images captured from hazy environmental situations. Participants are allowed to use a restoration/enhancement pre-processing step in the detection pipeline. In other words, they will not be tasked with the creation of novel object detection algorithms. A list of detection algorithms will be provided to them in order to facilitate studies of the interaction between image restoration and enhancement algorithms and the detectors. During the evaluation, the selected detection algorithms will be run on the sequestered test images. Through this challenge and benchmark, we aim to encourage more state-of-the-art single-image dehazing, haze quantification, and object detection algorithms. 
+                Our challenge is based on the A2I2-Haze, the first real haze dataset with in-situ smoke measurement aligned to aerial and ground imagery. This dataset is a joint collaboration with US Army Research, produced and measured by nonlethal smoke/obscurant munitions and generated hazy conditions in a controlled fashion. We provide a total of xxx unpaired hazy/clean frame images clipped from xxx videos. This training data is unlabeled, and the participating teams will be allowed to use any extra labeled/unlabeled training data is allowed. There will be 300 validation data and 200 testing data, both annotated. Imagery and metadata were collected from aerial,  ground platforms, and stationary sensors. The target objects include civilian vehicles, mannequins, and potential man-made obstacles encountered during unmanned ground vehicle (UGV) maneuvers such as traffic cones, barriers, barricades,  etc.
+                <!-- <ol>
                   <li>(Semi-)Supervised Object Detection in Haze Conditions</li>
                   <li>(Semi-)Supervised Face Detection in Low Light Conditions</li>
-                </ol>
+                </ol> -->
               
-              <p style="text-align: justify; ">
-                In all two sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data;
-                <b>but they must state so in their submissions ("Method description" section in Codalab)</b>.
+              <!-- <p style="text-align: justify; ">
+                <!-- In all two sub-challenges, the participant teams are allowed to use external training data that are not mentioned above, including self-synthesized or self-collected data; -->
+                <!-- <b>but they must state so in their submissions ("Method description" section in Codalab)</b>. -->
                 <!-- Each leaderboard will be divided into two ranking lists: with and without external data. -->
-                The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5.
-                If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region, and 0 otherwise.
-                When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially.
-              </p>
+                <!-- The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5. -->
+                <!-- If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region, and 0 otherwise. -->
+                <!-- When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially. -->
+              <!-- </p> -->
 
-              <p style="text-align: justify;padding-bottom: 40px">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2021.ug2challenge@gmail.com">cvpr2021.ug2challenge@gmail.com</a></p>
-              </p></p>
+              <p style="text-align: justify;padding-bottom: 40px">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2022.ug2challenge@gmail.com">cvpr2022.ug2challenge@gmail.com</a></p>
+              </p>
+            </p>
             </div>
           </div>
 
