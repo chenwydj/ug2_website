@@ -65,7 +65,7 @@
         <div class="container" style="width:100%">
           <div class="row"  style="padding: 40px 40px 0px 40px">
             <div class="col-sm-6 col-sm-offset-3">
-              <h2 class="module-title font-alt" style="margin: 0 0 20px">Challenge 2 (Action Recognition in the Dark) Datasets</h2>
+              <h2 class="module-title font-alt" style="margin: 0 0 20px">Challenge 3 Atmospheric Turbulence Mitigation Data</h2>
             </div>
           </div>
         </div>
@@ -74,96 +74,45 @@
       <section class="module" style="padding: 30px 0;" id='track2'>
         <div class="container" >
           <div class="row">
-            <h3 class="module-title font-alt align-left" style="margin-bottom: 40px"><span class="fas fa-cloud-sun-rain"></span> Track 2: Action Recognition from Dark Videos</h3>
+            <h3 class="module-title font-alt align-left" style="margin-bottom: 40px"><span class="fas fa-cloud-sun-rain"></span> Track 3: Atmospheric Turbulence Mitigation</h3>
             <div class="col-sm-12 col-md-12 col-lg-12">
               <div class="work-details">
-                <h4 class="work-details-title font-alt">About the Dataset</h4>
+                <h4 class="work-details-title font-alt">About the Turbulence Simulator</h4>
                 <p>
-                  The ARID dataset is a dataset dedicated for the action recognition task in dark videos (without additional sensors such as IR sensor). 
-                  It is the first of its kind to our knowledge. For this track, we structure it into two sub-challenges. 
-                  Each challenge features different actions and diverse training protocols.
+                  Due to the difficulties in collecting distorted/clean image pairs, researchers in the field of atmospheric turbulence mitigation are mostly working with synthetic data. The P2S simulator is the latest atmospheric turbulence simulator developed by Purdue University. It is, to our knowledge, the first physical-based simulator that can achieve close to real-time speed for simulating the atmospheric turbulence effect on images. 
                 </p>
                 <p>
-                  <ul>Dataset and baseline report: <a href='https://arxiv.org/abs/2006.03876' style="color: #337ab7; text-decoration: underline">Arxiv</a>
-                    <li><i>Note that for this challenge track we have updated the dataset described in the report. 
-                    The updated dataset contains more scenarios but with the same amount of classes.</i></li>
+                  <ul>Paper and simulator code: <a href='https://openaccess.thecvf.com/content/ICCV2021/papers/Mao_Accelerating_Atmospheric_Turbulence_Simulation_via_Learned_Phase-to-Space_Transform_ICCV_2021_paper.pdf' style="color: #337ab7; text-decoration: underline">paper</a>, <a href='https://github.itap.purdue.edu/StanleyChanGroup/TurbulenceSim_P2S' style="color: #337ab7; text-decoration: underline">code</a>
                   </ul>
                 </p>
-                <h5 class="work-details-title font-alt">Training & Evaluation</h5>
+                <h5 class="work-details-title font-alt">Evaluation</h5>
                 <p>
-                  In all two sub-challenges, the participant teams are allowed to use external training data that are not mentioned above,
-                  including self-synthesized or self-collected data; <b>but they must state so in their submissions ("Method description" section in Codalab)</b>.
-                  The ranking criteria will be the <b>Top-1 Accuracy</b> on each testing set.
+                  In the final testing stage, there will be 50 sequences of hot-air images and 500 sequences of text patterns. Each sequence will contain 100 turbulence distorted frames. The task for the participants is to reconstruct a high quality image from these 100 distorted frames (you can use all or part of these frames). The final ranking of the challenge will be based on the average accuracy of three existing scene text recognition algorithms on the reconstruction result of the text patterns. To encourage the participants to develop methods for generic scene, the same model used for processing the text images must also achieve certain performance (PSNR) on the hot-air images. The threshold is to be set by the organizer. 
                 </p>
 
-                <h4 class="work-details-title font-alt" id='subchallenge1'>Sub-Challenge 2.1: Fully Supervised Action Recognition in the Dark</h4>
-                <p>
-                  Participants are to perform action recognition in dark videos in a fully supervised manner. 
-                  We provide a total of 1,837 videos capturing actions performed by volunteers in the dark as the main training and/or validation sets. 
-                  These actions include a total of 6 classes (running, sitting, standing, turning, walking and waving). 
-                  The labels of these training videos are all provided in a single <i>.csv</i> file.
-                  For evaluation, a final action recognition test would be performed on a hold-out test set with 1289 videos.
-                  The hold-out test set contain the same classes as the provided training set.
-                </p>
                 <ul style="padding-left: 20px">
                   <li>
-                    <strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/2006.03876" target="_blank">ArXiv</a></span>
+                    <strong>Paper: </strong><span class="font-serif"><a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Mao_Accelerating_Atmospheric_Turbulence_Simulation_via_Learned_Phase-to-Space_Transform_ICCV_2021_paper.pdf" target="_blank">link</a></span>
                   </li>
                   <li>
-                    <strong>Release Date: </strong><span class="font-serif">June, 2020</span>
+                    <strong>Release Date: </strong><span class="font-serif">Oct, 2021</span>
                   </li>
                   <li>
-                    <strong>Download: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://drive.google.com/drive/folders/1emLzMgBogVAbxsupwdxsftC8xG7FsEcM?usp=sharing" target="_blank">Sub-Challenge 2.1 Training and Dry-run (Validation) Data</a></span>
+                    <strong>Download: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="http://cvpr2022.ug2challenge.org/index.html" target="_blank">Sub-Challenge 3 Simulator and Validation data</a></span>
                   </li>
                   <li>
-                    <strong>Download NEW!: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://entuedu-my.sharepoint.com/:f:/g/personal/xuyu0014_e_ntu_edu_sg/EvdjzxyV2HVMrEoe7jWR8roBvrzVH5I_s9tXDtB06HHiVg" target="_blank">Sub-Challenge 2.1 Testing Data (pwd:ug2@cvpr2021)</a></span>
+                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="http://cvpr2022.ug2challenge.org/index.html">Codalab Link</a></span>
                   </li>
                   <li>
-                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://competitions.codalab.org/competitions/28117">Codalab Link</a></span>
-                  </li>
-                  <li>
-                    <strong>Reference Code: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://github.com/xuyu0010/ARID_UG2_2.1">Reference Github Repository</a></span>
+                    <strong>Reference Code: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="http://cvpr2022.ug2challenge.org/index.html">Reference Github Repository</a></span>
                   </li>
                 </ul>
 
-                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Sub-Challenge 2.2: Semi-supervised Action Recognition in the Dark</h4>
-                <p>
-                  Participants are expected to perform action recognition in dark videos in a semi-supervised manner. 
-                  We provide a a subset of the HMDB51 dataset that includes 643 videos from 5 classes (drink, jump, pick, pour and push), all of which with labels provided. 
-                  To boost the effectiveness of the approaches on real dark videos, we provide another unlabeled set of 1,513 videos with the same 5 classes from the ARID dataset, 
-                  which might be used at the participants’ discretization.
-                  <strong>Note that these 1,513 videos are strictly PROHIBITED to be used by manually labeling the videos.</strong>
-                  The final action recognition test would be performed on a hold-out test set of real dark videos from the ARID dataset with 722 videos.
-                  The hold-out test set contain the same classes as the provided training set.
-               </p>
-                <ul style="padding-left: 20px">
-                  <li>
-                    <strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/2006.03876" target="_blank">ArXiv</a></span>
-                  </li>
-                  <li>
-                    <strong>Release Date: </strong><span class="font-serif">June, 2020</span>
-                  </li>
-                  <li>
-                    <strong>Download: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://drive.google.com/drive/folders/1yPt6HPypCQtfXBTb84mMhsjoC-8XZ-2c?usp=sharing" target="_blank">Sub-Challenge 2.2 Training and Dry-run (Validation) Data</a></span>
-                  </li>
-                  <li>
-                    <strong>Download NEW!: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://entuedu-my.sharepoint.com/:f:/g/personal/xuyu0014_e_ntu_edu_sg/EjQl5muiZOJIj9K-009EkEwBVl-h2HXLqdoHOZVBjzZ5ZQ" target="_blank">Sub-Challenge 2.2 Testing Data (pwd:ug2@cvpr2021)</a></span>
-                  </li>
-                  <li>
-                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://competitions.codalab.org/competitions/28118">Codalab Link</a></span>
-                  </li>
-                  <li>
-                    <strong>Reference Code: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://github.com/xuyu0010/ARID_UG2_2.2">Reference Github Repository</a></span>
-                  </li>
-                </ul>
-
+                
                 <p style="text-align: justify;">
                   If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2022.ug2challenge@gmail.com">cvpr2022.ug2challenge@gmail.com</a>
                 </p>
-                <p style="padding-bottom: 40px"> References:<br>
-                  [1] Xu, Y., Yang, J., Cao, H., Mao, K., Yin, J. and See, S., 2020. ARID: A New Dataset for Recognizing Action in the Dark. arXiv preprint arXiv:2006.03876.<br>
-                  [2] Jhuang, H., Garrote, H., Poggio, E., Serre, T. and Hmdb, T., 2011, November. A large video database for human motion recognition. In Proc. of IEEE International Conference on Computer Vision (Vol. 4, No. 5, p. 6).<br>
-                </p>
+                
               </div>
             </div>
           </div>
