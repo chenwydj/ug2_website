@@ -65,7 +65,7 @@
         <div class="container" style="width:100%">
           <div class="row"  style="padding: 40px 40px 0px 40px">
             <div class="col-sm-6 col-sm-offset-3">
-              <h2 class="module-title font-alt" style="margin: 0 0 20px">Challenge 2 (Action Recognition in the Dark) Datasets</h2>
+              <h2 class="module-title font-alt" style="margin: 0 0 20px">Challenge 2 (Semi-Supervised Action Recognition in the Dark) Datasets</h2>
             </div>
           </div>
         </div>
@@ -74,53 +74,50 @@
       <section class="module" style="padding: 30px 0;" id='track2'>
         <div class="container" >
           <div class="row">
-            <h3 class="module-title font-alt align-left" style="margin-bottom: 40px"><span class="fas fa-cloud-sun-rain"></span> Track 2: Action Recognition from Dark Videos</h3>
+            <h3 class="module-title font-alt align-left" style="margin-bottom: 40px"><span class="fas fa-cloud-sun-rain"></span> Track 2: (Semi-Supervised) Action Recognition from Dark Videos</h3>
             <div class="col-sm-12 col-md-12 col-lg-12">
               <div class="work-details">
                 <h4 class="work-details-title font-alt">About the Dataset</h4>
                 <p>
-                  The ARID dataset is a dataset dedicated for the action recognition task in dark videos (without additional sensors such as IR sensor). 
-                  It is the first of its kind to our knowledge. For this track, we structure it into two sub-challenges. 
-                  Each challenge features different actions and diverse training protocols.
+                  The ARID[1] dataset is a dataset dedicated for the action recognition task in dark videos (without additional sensors such as IR sensor). 
+                  It is the first of its kind to our knowledge. Meanwhile, we intend to elevate current public dataset to be used in conjunction with unlabeled dark videos to build action recognition models robust to poor illumination. Such methods would be more eco-friendly and computation resource efficient with the exclusion of costly video annotation.
                 </p>
                 <p>
-                  <ul>Dataset and baseline report: <a href='https://arxiv.org/abs/2006.03876' style="color: #337ab7; text-decoration: underline">Arxiv</a>
+                  <ul>Dataset and baseline report: <a href='https://arxiv.org/abs/2006.03876' style="color: #337ab7; text-decoration: underline">Arxiv</a> <a href='https://link.springer.com/chapter/10.1007/978-981-16-0575-8_6' style="color: #337ab7; text-decoration: underline">Springer</a>
                     <li><i>Note that for this challenge track we have updated the dataset described in the report. 
                     The updated dataset contains more scenarios but with the same amount of classes.</i></li>
                   </ul>
                 </p>
                 <h5 class="work-details-title font-alt">Training & Evaluation</h5>
                 <p>
-                  In all two sub-challenges, the participant teams are allowed to use external training data that are not mentioned above,
+                  In this challenge, the participant teams are allowed to use external training data that are not mentioned in the <a href="track2.html">Description</a>,
                   including self-synthesized or self-collected data; <b>but they must state so in their submissions ("Method description" section in Codalab)</b>.
-                  The ranking criteria will be the <b>Top-1 Accuracy</b> on each testing set.
+                  The ranking criteria will be the <b>Top-1 Accuracy</b> and the <b>Cross-Entropy Loss</b> on the testing set.
                 </p>
 
-                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Sub-Challenge 2.2: Semi-supervised Action Recognition in the Dark</h4>
+                <h4 class="work-details-title font-alt" style="padding-top: 30px" id='subchallenge2'>Semi-supervised Action Recognition in the Dark</h4>
                 <p>
-                  Participants are expected to perform action recognition in dark videos in a semi-supervised manner. 
-                  We provide a a subset of the HMDB51 dataset that includes 643 videos from 5 classes (drink, jump, pick, pour and push), all of which with labels provided. 
-                  To boost the effectiveness of the approaches on real dark videos, we provide another unlabeled set of 1,513 videos with the same 5 classes from the ARID dataset, 
-                  which might be used at the participants’ discretization.
-                  <strong>Note that these 1,513 videos are strictly PROHIBITED to be used by manually labeling the videos.</strong>
-                  The final action recognition test would be performed on a hold-out test set of real dark videos from the ARID dataset with 722 videos.
+                  Participants are expected to perform action recognition in dark videos in a semi-supervised manner, utilizing labeled videos collected from common public video datasets, and unlabeled dark videos. We provide a curated subset of labeled clear videos from HMDB51[2], UCF101[3], Kinetics-600[4], and Moments in Time[5], that includes a total of 2,625 videos from 11 classes: drink, jump, pick, pour, push, run, sit, stand, turn, walk, and wave. To boost the effectiveness of the approaches on real dark videos, we provide another unlabeled set of 3,088 videos with the same 11 classes, collected from the ARID dataset, which might be used at the participants’ discretization.<br>
+                  
+                  <strong>Note that these 3,088 dark videos are strictly PROHIBITED to be used by manually labeling the videos.</strong>
+                  The final action recognition test would be performed on a hold-out test set of real dark videos from the ARID dataset with 3,103 videos.
                   The hold-out test set contain the same classes as the provided training set.
                </p>
                 <ul style="padding-left: 20px">
                   <li>
-                    <strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/2006.03876" target="_blank">ArXiv</a></span>
+                    <strong>Paper: </strong><span class="font-serif"><a href="https://arxiv.org/abs/2006.03876" target="_blank">ArXiv</a> <a href="link.springer.com/chapter/10.1007/978-981-16-0575-8_6" target="_blank">Springer</a></span>
                   </li>
                   <li>
                     <strong>Release Date: </strong><span class="font-serif">June, 2020</span>
                   </li>
                   <li>
-                    <strong>Download: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://drive.google.com/drive/folders/1yPt6HPypCQtfXBTb84mMhsjoC-8XZ-2c?usp=sharing" target="_blank">Sub-Challenge 2.2 Training and Dry-run (Validation) Data</a></span>
+                    <strong>Download: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://drive.google.com/drive/folders/1upPSdrFClCpgpMZNSVKNBjz3XenL16pp?usp=sharing" target="_blank">Challenge 2 Training and Dry-run (Validation) Data</a></span>
                   </li>
+                  <!-- <li> -->
+                    <!-- <strong>Download NEW!: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://entuedu-my.sharepoint.com/:f:/g/personal/xuyu0014_e_ntu_edu_sg/EjQl5muiZOJIj9K-009EkEwBVl-h2HXLqdoHOZVBjzZ5ZQ" target="_blank">Challenge 2 Testing Data </a></span> -->
+                  <!-- </li> -->
                   <li>
-                    <strong>Download NEW!: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://entuedu-my.sharepoint.com/:f:/g/personal/xuyu0014_e_ntu_edu_sg/EjQl5muiZOJIj9K-009EkEwBVl-h2HXLqdoHOZVBjzZ5ZQ" target="_blank">Sub-Challenge 2.2 Testing Data (pwd:ug2@cvpr2021)</a></span>
-                  </li>
-                  <li>
-                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://competitions.codalab.org/competitions/28118">Codalab Link</a></span>
+                    <strong>Codalab: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://codalab.lisn.upsaclay.fr/competitions/???">Codalab Link</a></span>
                   </li>
                   <li>
                     <strong>Reference Code: </strong><span class="font-serif"><a style="color: #337ab7; text-decoration: underline" target="_blank" href="https://github.com/xuyu0010/ARID_UG2_2.2">Reference Github Repository</a></span>
@@ -130,10 +127,14 @@
                 <p style="text-align: justify;">
                   If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2022.ug2challenge@gmail.com">cvpr2022.ug2challenge@gmail.com</a>
                 </p>
+
                 <p style="padding-bottom: 40px"> References:<br>
                   [1] Xu, Y., Yang, J., Cao, H., Mao, K., Yin, J. and See, S., 2020. ARID: A New Dataset for Recognizing Action in the Dark. arXiv preprint arXiv:2006.03876.<br>
                   [2] Jhuang, H., Garrote, H., Poggio, E., Serre, T. and Hmdb, T., 2011, November. A large video database for human motion recognition. In Proc. of IEEE International Conference on Computer Vision (Vol. 4, No. 5, p. 6).<br>
-                </p>
+                  [3] Soomro, K., Zamir, A.R. and Shah, M., 2012. UCF101: A dataset of 101 human actions classes from videos in the wild. arXiv preprint arXiv:1212.0402.<br>
+                  [4] Kay, W., Carreira, J., Simonyan, K., Zhang, B., Hillier, C., Vijayanarasimhan, S., Viola, F., Green, T., Back, T., Natsev, P. and Suleyman, M., 2017. The kinetics human action video dataset. arXiv preprint arXiv:1705.06950.<br>
+                  [5] Monfort, M., Andonian, A., Zhou, B., Ramakrishnan, K., Bargal, S.A., Yan, T., Brown, L., Fan, Q., Gutfreund, D., Vondrick, C. and Oliva, A., 2019. Moments in time dataset: one million videos for event understanding. IEEE transactions on pattern analysis and machine intelligence, 42(2), pp.502-508.
+              </p>
               </div>
             </div>
           </div>
