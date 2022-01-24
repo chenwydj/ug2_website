@@ -79,7 +79,10 @@
       <section class="module" style="padding: 30px 0;" id='track2'>
         <div class="container" >
           <div class="row">
+            <div>
+<!--             <p style="float: right;"><img height="300" width="300" src="pics/ccdc_arl_logo.png"></p> -->
             <h3 class="module-title font-alt align-left" style="margin-bottom: 40px"><span class="fas fa-cloud-sun-rain"></span> Track 1: Object Detection in Haze</h3>
+            </div>
             <div class="col-sm-12 col-md-12 col-lg-12">
               <div class="work-details">
                 <h4 class="work-details-title font-alt">About the Dataset</h4>
@@ -88,15 +91,19 @@
                   <!-- Each challenge features a different poor-visibility outdoor condition, -->
                   <!-- and diverse training protocols (paired versus unpaired images, annotated versus unannotated, etc.). -->
                 </p>
+
                 <!-- TODO -->
-                <p><ul><li>Dataset and baseline report: coming soon</li></ul></p>
+<!--                 <div>
+ -->                  <p><ul><li>Dataset and baseline report: <span class="font-serif"><a href="A2I2-Haze.pdf" target="_blank">A2I2-Haze.pdf</a></span></li></ul></p>
+                <!-- </div> -->
                 <h5 class="work-details-title font-alt">Training & Evaluation</h5>
+
                 <p>
                   We provide a total of 177 paired hazy/clean frame images clipped from 12 videos. We also release another set of 240 annotated clean images collected from the same sources (and containing the same classes of vehicles), which could be used at the participants’ will to train a good vehicle detector.
                   This training data is labeled, and the participating teams will be allowed to use any extra labeled/unlabeled training data,
                   <b>but they must state so in their submissions ("Method description" section in Codalab)</b>.
                   Imagery and metadata were collected from aerial, ground platforms, and stationary sensors.
-                  The target objects include civilian vehicles, mannequins, and potential man-made obstacles encountered during unmanned ground vehicle (UGV) maneuvers such as traffic cones, barriers, barricades, etc.
+                  The target objects are civilian vehicles. All the other objects including mannequins, and man-made obstacles such as traffic cones, barriers, barricades, etc will NOT be used in the object detection evaluation, since they are too difficult to detection due to small size and lack of training data.
                   The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5.
                   If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region,
                   and 0 otherwise. When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially.
@@ -112,9 +119,6 @@
                 <!-- </p> -->
                 <ul style="padding-left: 20px">
                   <li>
-                    <strong>Dataset Report: </strong><span class="font-serif"><a href="A2I2-Haze.pdf" target="_blank">A2I2-Haze.pdf</a></span>
-                  </li>
-                  <li>
                     <strong>Release Date: </strong><span class="font-serif">January, 2022</span>
                   </li>
                   <li>
@@ -128,12 +132,6 @@
                     <span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://drive.google.com/file/d/11lyyG2vtuYSVW3nxoxHoTC-yjE_8cfrl/view?usp=sharing" target="_blank">Google drive link</a></span>
                     &nbsp;&nbsp;
                     <span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://pan.baidu.com/s/1Whed4c0f7J0Ezd2_NCgXpA" target="_blank">Baidu Wangpan Link</a>(code: biut)</span>
-                  </li>
-                  <li>
-                    <strong>Example submitted dry-run results:</strong>
-                    <span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://drive.google.com/file/d/1gsKKRfxr0eHiJz5g1Fd5XrpQ9FmmI6EN/view?usp=sharing" target="_blank">Google drive link</a></span>
-                    &nbsp;&nbsp;
-                    <span class="font-serif"><a style="color: #337ab7; text-decoration: underline" href="https://pan.baidu.com/s/1Evyuf6EnBnu5SrqIP0Kp6A" target="_blank">Baiduyun link</a> (coming soon)</span>
                   </li>
                   <!-- <li>
                     <strong>Download Test images:</strong>
