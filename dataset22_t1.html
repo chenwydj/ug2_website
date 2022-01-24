@@ -103,7 +103,7 @@
                   This training data is labeled, and the participating teams will be allowed to use any extra labeled/unlabeled training data,
                   <b>but they must state so in their submissions ("Method description" section in Codalab)</b>.
                   Imagery and metadata were collected from aerial, ground platforms, and stationary sensors.
-                  The target objects include civilian vehicles, mannequins, and potential man-made obstacles encountered during unmanned ground vehicle (UGV) maneuvers such as traffic cones, barriers, barricades, etc.
+                  The target objects are civilian vehicles. All the other objects including mannequins, and man-made obstacles such as traffic cones, barriers, barricades, etc will NOT be used in the object detection evaluation, since they are too difficult to detection due to small size and lack of training data.
                   The ranking criteria will be the Mean average precision (mAP) on each testing set, with Interception-of-Union (IoU) threshold as 0.5.
                   If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region,
                   and 0 otherwise. When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially.
