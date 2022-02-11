@@ -53,6 +53,24 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
 </head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 24.0%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
   <a id="ddmenuLink" href="menu_transparent.html">Menu</a>
   <main>
@@ -66,7 +84,7 @@
         <div class="container" style="width:100%">
           <div class="row" style="padding-top: 40px">
             <div class="col-sm-6 col-sm-offset-3">
-<!--               <p style="float: right;"><img height="300" width="300" src="pics/ccdc_arl_logo.png"></p> -->
+              <p style="float: right;"><img height="300" width="300" src="pics/smoke_generator.png"></p>
               <h2 class="module-title font-alt" style="margin: 0 0 0px">Track 1: Object Detection in Haze</h2>
               <h3 class="module-subtitle font-serif" style="margin: 0 0 20px"><a href="https://forms.gle/Td6DQuAJuuoLptN58" target="_blank" class="section-scroll btn btn-border-w btn-round">Register for this track</a></h3>
             </div>
@@ -84,6 +102,20 @@
 
               <p>Track 1 is based on the A2I2-Haze, the first real haze dataset with in-situ smoke measurement aligned to aerial imagery. A2I2-Haze has paired haze and haze-free imagery that will allow fine-grained evaluation of computer vision algorithms. A2I2-Haze is a result of joint collaboration with DEVCOM Army Research Laboratory, produced and measured by nonlethal smoke/obscurant munitions and generated hazy conditions in a controlled way.
               We provide a total of 229 paired hazy/clean frame images extracted from 12 videos. A2I2-Haze is labeled with civilian vehicles, and the participating teams will be allowed to use any extra labeled/unlabeled training data is allowed. There will be 197 paired images for training and 32 reserved for final testing. </p>
+              <div class="row">
+               <div class="column">
+                  <img height="300" width="300" src="pics/data_collection1.jpg">
+               </div>
+               <div class="column">
+                  <img height="300" width="300" src="pics/data_collection2.jpg">
+               </div>
+               <div class="column">
+                  <img height="300" width="300" src="pics/data_collection3.jpg">
+               </div>
+               <div class="column">
+                  <img height="300" width="300" src="pics/data_collection4.jpg">
+               </div>
+              </div>
                 <!-- <ol>
                   <li>(Semi-)Supervised Object Detection in Haze Conditions</li>
                   <li>(Semi-)Supervised Face Detection in Low Light Conditions</li>
@@ -97,6 +129,7 @@
                 <!-- If the ratio of the intersection of a detected region with an annotated face region is greater than 0.5, a score of 1 is assigned to the detected region, and 0 otherwise. -->
                 <!-- When mAPs with IoU as 0.5 are equal, the mAPs with higher IoUs (0.6, 0.7, 0.8) will be compared sequentially. -->
               <!-- </p> -->
+              	<!-- <ul> -->
 
               <p style="text-align: justify;padding-bottom: 40px">If you have any questions about this challenge track please feel free to email <a style="color: #337ab7; text-decoration: underline" href="mailto:cvpr2022.ug2challenge@gmail.com">cvpr2022.ug2challenge@gmail.com</a></p>
               </p>
