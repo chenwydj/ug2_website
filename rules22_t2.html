@@ -157,7 +157,7 @@
               <ol style="text-align: justify;">
                 <li>Download the training/validation/testing datasets. The testing dataset would be available for download on April 30 (GMT+0, 00:00).</li>
                 <li>Train or finetune your model. For obtaining the final testing result, run your trained model on the testing set.</li>
-                <li>Pack your code into <b>one single .zip file</b>. By default we would be using raw video as the input to your code. If your algorithm requires the use of individual video frame, include you frame extraction code as well in the zip file.</li>
+                <li>Pack your code into <b>one single .zip file</b>. By default we would be using raw video as the input to your code. If your algorithm requires the use of individual video frame or other pre-processing algorithms, include you frame extraction or pre-processing code as well in the zip file.</li>
                 <li>Include a detailed instruction of the placement of the training, validation and testing data (i.e. where to place the data to enable training and testing).</li>
                 <li>You should contain at most three running scripts, one for data pre-processing (named <code>run_preproc.sh</code>), one for training (named <code>run_train.sh</code>) and one for testing (inference) (named <code>run_test.sh</code>). We will <b>ONLY</b> run the three scripts during the validation process.</li>
                 <li>Including the trained weight of your algorithm that could lead to the result shown in the leaderboard is highly recommended.</li>
